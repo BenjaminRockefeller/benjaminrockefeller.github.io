@@ -141,16 +141,9 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
-  books:
-    output: true
-  news:
-    defaults:
-      layout: post
-    output: true
   projects:
     output: true
     permalink: /projects/:path/
-
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
