@@ -6,77 +6,46 @@ importance: 1
 category: work
 ---
 
-### 🔍 Project Overview
+# Project 3｜Multi-Agent Financial Fraud Detection System
 
-This system tackles key pain points in financial risk control: delayed fraud detection, high false-positive rates, broken decision pipelines, and vulnerability to prompt attacks. By integrating Graph Attention Networks (GAT), a multi-agent task scheduling mechanism (LangGraph), RLHF reward optimization, and a security-focused prompt defense module, this enterprise-grade system enables joint modeling of structured behavior data and unstructured intent signals. It has been tested in real-world loan approval and risk scoring scenarios.
+### Integrating LangGraph, Graph Attention Networks, RLHF, and Prompt Defense for High-Fidelity Risk Control
 
----
+#### Project Overview
 
-### 🧭 Motivation & Problem Statement
+This project addresses four major challenges in enterprise-grade financial risk control systems: delayed fraud detection, high false-positive rates, fragmented decision pipelines, and susceptibility to prompt injection attacks. By building a multi-agent system integrating LangGraph task routing, GAT-based graph learning, RLHF-enhanced intent classification, and a security-oriented prompt defense module, we construct an end-to-end, interpretable, and robust fraud detection pipeline. The system has been tested in real-world loan approval and risk scoring scenarios with promising outcomes.
 
-Financial risk control traditionally suffers from:
+#### Key Contributions and Implementation
 
-- ⚠️ **Broken process flow** due to rigid rule-based systems
-- ❌ **High false-positive rates** with outdated ML baselines
-- 🛡️ **Susceptibility to prompt injection & adversarial attacks**
+- **Multi-Agent Scheduling Architecture**: Designed a three-stage agent chain (`Risk Identification → Rule Judgment → Manual Review`) using LangGraph's `AgentNode + AgentState` mechanism. Enabled dynamic task allocation, memory routing, and upstream–downstream context preservation. Resolved fragmented workflows common in traditional financial pipelines.
 
-Our solution ensures robust, interpretable, and high-precision fraud detection across the full pipeline: transaction modeling → intent classification → adversarial defense → human audit traceability.
+- **Graph-Based Behavior Modeling**: Constructed a heterogeneous transaction graph (42,000 samples) with device fingerprints, address linkage, and transaction frequency as node/edge features. Trained a Graph Attention Network (GAT) using DGL + PyTorch, achieving F1 scores of 0.918 (validation) and 0.911 (test), outperforming GraphSAGE and LightGBM in fraud pattern detection.
 
----
+- **Unstructured Intent Classification with RLHF**: Fine-tuned ChatGLM3-6B on 11,000 annotated queries across 14 financial intent categories. Integrated GPT-3.5 as the reward model within an RLHF training loop to improve semantic consistency and domain alignment. Achieved +11.3% increase in intent labeling accuracy.
 
-### 🧠 Architecture & Core Modules
+- **Prompt Injection Defense Module**: Collected and labeled 36 types of prompt attacks, including role misuse, denial chaining, and indirect bypasses. Combined Detoxify-based toxicity filtering with reward-weighted reinforcement:  
+  `R_total = 0.5 × Task Fidelity + 0.3 × Output Consistency + 0.2 × Safety Score`.  
+  Results: reduced jailbreak success rate from 31.2% to 9.6%, toxicity score dropped from 0.23 to 0.07, and bias-trigger activation rate decreased by 42.5%.
 
-#### 🧩 Multi-Agent Chain via LangGraph
-- Designed 3-stage Agent chain: `Risk ID Agent → Rule Judge Agent → Manual Review Agent`
-- Used `AgentNode + AgentState` for dynamic task routing & context sharing
-- Unblocked fragmented workflows in traditional systems
+- **Adversarial Robustness Validation**: Conducted ablation experiments to quantify the contribution of each component. Reward fusion within the prompt defense module improved F1 by +3.4%, reduced attack bypass by 19.8%, and accelerated convergence speed by 24% relative to baseline RLHF without defenses.
 
-#### 📊 GAT-Based Behavior Graph Modeling
-- Built a heterogeneous graph on 42,000 transactions
-- Node features: frequency, device fingerprints; Edge: amount shifts, address link strength
-- F1 = 0.918 (validation), 0.911 (test), outperforming GraphSAGE & LightGBM
+- **Hybrid Rules + Model Fusion Engine**: Combined learned GAT outputs with 17 domain-specific hard rules. Boosted generalization and decision controllability in real-world regulatory environments.
 
-#### 📘 Unstructured Intent Modeling via RLHF
-- Fine-tuned ChatGLM3-6B on 11,000 labeled samples across 14 intent types
-- Used GPT-3.5 as Reward Model for RLHF alignment → consistency +11.3%
+- **Traceable Audit Logging**: Integrated LangSmith to record agent-level decision steps and transitions. Enabled regulatory compliance and human-in-the-loop audit in high-stakes banking applications.
 
-#### 🛡️ Prompt Injection Defense Module
-- Collected 36 attack patterns (e.g., role spoofing, denial triggers)
-- Integrated Detoxify & added reward fusion:  
-  `R_total = 0.5 * Task Fidelity + 0.3 * Output Consistency + 0.2 * Safety Score`
-- Reduced Jailbreak Success Rate: **31.2% → 9.6%**
-- Toxicity Score: **0.23 → 0.07**; Bias Trigger ↓42.5%
+#### Deployment and Performance
 
-#### 🧪 Adversarial Ablation Experiment
-| Configuration | F1 ↑ | Attack Bypass ↓ | Convergence Speed ↑ |
-|---------------|------|------------------|----------------------|
-| No Defense + Generic RLHF | - | - | - |
-| + Defense (No Reward Fusion) | +1.7% | ↓9.4% | ↑11% |
-| ✅ Full Defense (with Reward Fusion) | **+3.4%** | **↓19.8%** | **↑24%** |
+- Deployed with FastAPI + Redis in Docker Compose architecture, supporting over 50 QPS per node with inference latency under 450 ms.
 
-#### ⚖️ Hybrid-Rule Engine
-- Combined GAT model output with 17 business rules
-- Boosted compatibility and real-world adaptability
+- System monitored via Prometheus and Grafana dashboards for real-time service health and alerting.
 
-#### 🧾 Agent Traceability & Audit Logging
-- Integrated LangSmith for step-by-step trace recording
-- Enables audit compliance in banking-grade applications
+#### Future Extensions
 
----
+- Scenarios: Scalable to insurance fraud detection, e-commerce risk scoring, Web3 compliance audits.
 
-### 🚀 Deployment & Performance
-- Inference latency < 450ms
-- Concurrent QPS = 50+ (single node)
-- Stack: `FastAPI + Redis + Docker Compose + Prometheus`
+- Modular plug-ins: Designed with flexible API endpoints and event hooks for third-party decision engines.
 
----
+- Defense-as-a-Service: Planning export of defense modules as stand-alone evaluators for LLM deployment pipelines.
 
-### 💼 Future Business Use Cases
-- ✅ Loan approvals
-- ✅ Risk assessment platforms
-- ✅ Expandable to insurance, e-commerce, Web3, etc.
+#### Tech Stack
 
----
-
-### 🧰 Tech Stack
-ChatGLM3‑6B, QLoRA, RLHF, GPT-3.5 Reward Model, LangGraph, LangChain, LangSmith, GAT (DGL + PyTorch), Prompt Injection Eval, Detoxify, Hybrid Rules Engine, FastAPI, Redis, Docker Compose, Prometheus, Grafana, SMOTE, Z-Score, Isolation Forest, Sklearn, Pandas, WandB, Kaggle Dataset
+ChatGLM3-6B, QLoRA, RLHF, GPT-3.5 Reward Model, LangGraph, LangChain, LangSmith, GAT (DGL + PyTorch), Prompt Injection Detection, Detoxify, Hybrid Rules Engine, FastAPI, Redis, Docker Compose, Prometheus, Grafana, SMOTE, Z-Score Normalization, Isolation Forest, Sklearn, Pandas, WandB, Kaggle Dataset
