@@ -6,62 +6,59 @@ importance: 5
 category: work
 ---
 
-### ✅ Project 5｜High-Performance Multi-Model Inference Optimization Platform  
-(Integrating Tensor Parallelism and INT8 Quantization for Low-Latency Deployment)
+# Project 5｜High-Performance Multi-Model Inference Optimization Platform
+
+### Integrating Tensor Parallelism and INT8 Quantization for Low-Latency Deployment
 
 ---
 
-#### Project Overview  
+## Project Overview
 
-To tackle key challenges in enterprise-level LLM inference—including high memory consumption, long response latency, and limited multi-terminal compatibility—we built a high-performance deployment platform that integrates tensor parallelism, pipeline parallelism, and low-precision quantization. This platform supports multi-modal tasks, LoRA hot-swapping, and heterogeneous device scheduling. It is optimized for deployment in finance, government, manufacturing, and other latency-sensitive production environments.
-
----
-
-#### Project Contributions  
-
-- Designed and implemented a distributed inference architecture using Huggingface Transformers + DeepSpeed, enabling **Tensor Parallel + Pipeline Parallel** execution.  
-  - Optimized context window up to 128K  
-  - Integrated with `vLLM` engine  
-  - Achieved a **3.7× improvement** in QPS  
-  - Stable for multi-turn dialogue tasks
-
-- Built a hybrid **INT8 + FP16 quantization path**:  
-  - Applied Quantization-Aware Training (QAT) on ChatGLM2-6B  
-  - Deployed with `OpenVINO` for CPU inference acceleration  
-  - Reduced memory usage by **~53%**  
-  - Cut average response latency to **<2.8s**
-
-- Developed a **unified inference API** using FastAPI + JSON-RPC:  
-  - Supported prompt batching, auto-routing by task type, and concurrent request management  
-  - Increased interface success rate from **92.6% → 99.3%**
-
-- Built a containerized deployment system with Docker Compose:  
-  - Integrated `Nginx` for load balancing, token authentication, and SSL encryption  
-  - Enabled automatic switching between GPU/CPU for hybrid scheduling and secure intranet access
-
-- Implemented **hot-pluggable model update modules**:  
-  - Compatible with self-trained LoRA/QLoRA weight formats  
-  - Enabled dynamic model switching without restart  
-  - Average switch time: **<1.3s**
-
-- Curated a **multi-task inference dataset (21,000 samples)**:  
-  - Sourced from enterprise support logs, research prompts, and customer service tickets  
-  - Applied regex-based cleaning + instruction template transformation  
-  - Covered tasks: generation, summarization, classification, and NER
-
-- Resolved GPU scheduling conflicts between vLLM and pipeline parallelism:  
-  - Tuned `tensor_parallel_size` and `async_batching` configurations  
-  - Stably supported 8-GPU distributed inference  
-  - Increased task throughput by **~2.4×**
-
-- Performance benchmarking showed over **30% improvement** compared to baseline across:  
-  - Inference throughput  
-  - API response rate  
-  - Model switch efficiency  
-    Platform has been successfully deployed in quantitative research, government Q&A, and internal CRM systems.
+To address enterprise challenges such as high inference latency, excessive GPU memory consumption, and low compatibility with heterogeneous hardware, this project developed a distributed high-performance inference platform. The system combines tensor and pipeline parallelism with mixed-precision quantization, supports multi-modal tasks and dynamic model switching, and is optimized for latency-sensitive use cases in finance, public services, and manufacturing.
 
 ---
 
-#### Tech Stack  
+## Project Contributions
 
-ChatGLM2‑6B, DeepSpeed, vLLM, Tensor Parallelism, Pipeline Parallelism, INT8 QAT, OpenVINO, FastAPI, JSON-RPC, LoRA / QLoRA, Docker Compose, Nginx, SSL, Token Auth, WandB
+- Designed a distributed inference framework based on Huggingface Transformers and DeepSpeed, enabling combined tensor and pipeline parallel execution.
+  - Extended context window up to 128K tokens
+  - Integrated vLLM engine for fast multi-turn dialogue support
+  - Improved throughput (QPS) by 3.7× under load
+
+- Developed hybrid INT8 + FP16 quantization strategy:
+  - Applied Quantization-Aware Training (QAT) to ChatGLM2-6B
+  - Deployed using OpenVINO for CPU acceleration
+  - Reduced memory usage by ~53%
+  - Achieved average response latency < 2.8 seconds
+
+- Created a unified inference interface using FastAPI + JSON-RPC:
+  - Supported prompt batching and task-type routing
+  - Increased success rate from 92.6% to 99.3%
+
+- Built containerized deployment infrastructure:
+  - Used Docker Compose with Nginx for load balancing and SSL security
+  - Enabled hybrid CPU/GPU scheduling and intranet access control
+
+- Enabled hot-swappable model loading:
+  - Compatible with LoRA and QLoRA adapters
+  - Dynamic switching time < 1.3 seconds without system restart
+
+- Constructed a 21,000-sample multi-task inference dataset:
+  - Aggregated from real enterprise tickets and internal queries
+  - Applied regex-based cleaning and instruction formatting
+  - Tasks included generation, classification, summarization, and NER
+
+- Optimized GPU allocation:
+  - Tuned tensor_parallel_size and async_batching settings
+  - Resolved contention issues between vLLM and pipeline schedulers
+  - Increased GPU utilization and task throughput by ~2.4×
+
+- Conducted comprehensive benchmarking:
+  - Outperformed baseline systems by >30% in throughput, API stability, and model switch latency
+  - Validated deployment in quantitative research platforms, government knowledge bases, and CRM systems
+
+---
+
+## Tech Stack
+
+ChatGLM2‑6B, DeepSpeed, vLLM, Tensor Parallelism, Pipeline Parallelism, INT8 Quantization, QAT, OpenVINO, FastAPI, JSON-RPC, LoRA/QLoRA, Docker Compose, Nginx, SSL, Token Auth, Weights & Biases
