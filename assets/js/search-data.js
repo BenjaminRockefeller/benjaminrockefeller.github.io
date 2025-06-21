@@ -428,8 +428,8 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/project1/";
-            },},{id: "projects-project-2-intelligent-quantitative-strategy-generation-platform",
-          title: 'Project 2｜Intelligent Quantitative Strategy Generation Platform',
+            },},{id: "projects-project-2-intelligent-quantitative-strategy-platform",
+          title: 'Project 2 | Intelligent Quantitative Strategy Platform',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/project2/";
