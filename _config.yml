@@ -1,40 +1,55 @@
+# _config.yml
+
 title: Benjamin Rockefeller
-description: >-
-  Researcher in AI, NLP, and Quant Finance.
-baseurl: ""
-url: "https://benjaminrockefeller.github.io"
+description: >
+  AI Research | Quantitative Finance | NLP Applications
+baseurl: "" # 如果不是根目录，设置为 "/子路径"
+url: "https://benjaminrockefeller.github.io" # 改为你 GitHub Pages 实际地址
 
-theme: al-folio
-remote_theme: alshedivat/al-folio
-
-markdown: kramdown
-highlighter: rouge
-
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
-
+# 启用插件
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-include-cache
-  - jekyll-redirect-from
-  - jekyll-remote-theme
-  # - jekyll-archives  # 暂时禁用，防止 docs 相关错误
 
-defaults:
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: project
+# Collections 设置
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - README.md
+# 导航配置
+nav_pages:
+  - start-here.md
+  - projects.md
+  - cv.md
+  - venture-studio.md
+  - content-universe.md
+
+# Markdown 与高亮
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    line_numbers: true
+
+# 启用分页（可选）
+paginate: 5
+paginate_path: "/page:num/"
+
+# SEO 设置
+author:
+  name: Benjamin Rockefeller
+  email: your@email.com
+
+# Social 图标（可选）
+social_links:
+  github: https://github.com/BenjaminRockefeller
+  linkedin: https://linkedin.com/in/your-id
+  twitter: https://twitter.com/your-id
+
+# Google Analytics（如无可注释）
+google_analytics: ""
