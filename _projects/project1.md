@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Project 1｜Financial Research Report Generation Platform: RAG-Enhanced Contextual Reasoning with On-Premise Deployment (Tailored for U.S. Equity Market)"
+title: "Project 1｜Financial Research Report Generation Platform"
+description: "RAG-Enhanced Contextual Reasoning with On-Premise Deployment (Tailored for U.S. Equity Market)"
 permalink: /projects/project1/
 importance: 1
 category: work
@@ -28,19 +29,19 @@ category: work
   }
 </style>
 
-# <span class="project-title">📚 Project 1｜Financial Research Report Generation Platform</span>
+# <span class="project-title">Project 1｜Financial Research Report Generation Platform</span>
 
 ## <span class="project-subtitle">RAG-Enhanced Contextual Reasoning with On-Premise Deployment (Tailored for U.S. Equity Market)</span>
 
 ---
 
-## 🔍 Project Overview
+## Project Overview
 
 This project addresses major challenges in financial research report generation, including redundant content, hallucination-prone outputs, unstructured formatting, and low automation levels. We built a RAG-enhanced system capable of controllable generation, modular maintenance, and high-fidelity citation, with full support for on-premise deployment. The pipeline integrates financial corpus collection, multi-stage semantic retrieval, prompt injection, multi-model tuning, and optimized inference.
 
 ---
 
-## 🧭 Motivation & Problem Statement
+## Motivation & Problem Statement
 
 Based on interviews with over 30 private equity and research institutions, we identified the following pain points:
 
@@ -53,7 +54,7 @@ Based on interviews with over 30 private equity and research institutions, we id
 
 ---
 
-## 🛠️ System Architecture
+## System Architecture
 
 **Pipeline**:  
 Data Collection → BM25 → Dense Retrieval → Cross-Encoder → Prompt Injection → LLM Inference → Hallucination Filtering → On-Prem Deployment
@@ -64,7 +65,7 @@ Data Collection → BM25 → Dense Retrieval → Cross-Encoder → Prompt Inject
 
 ---
 
-## 📊 Evaluation Results
+## Evaluation Results
 
 | Model                | Hallucination Rate | Consistency Score | Structural Integrity |
 |---------------------|--------------------|-------------------|----------------------|
@@ -73,33 +74,33 @@ Data Collection → BM25 → Dense Retrieval → Cross-Encoder → Prompt Inject
 
 ---
 
-## 🚀 Deployment & Performance
+## Deployment & Performance
 
-- <span class="highlight">Latency</span> < 300ms, <span class="highlight">QPS = 52</span>
-- <span class="highlight">48 GPU-hours</span>, ~$65 cost
+- <span class="highlight">Latency</span> < 300ms, <span class="highlight">QPS = 52</span>  
+- <span class="highlight">48 GPU-hours</span>, ~$65 cost  
 - Hardware: <span class="highlight">RTX A100</span>
 
 ---
 
-## 👨‍⚖️ Expert Validation
+## Expert Validation
 
-- Reviewed by U.S. equity analysts
-- Reported improvements in:
-  - Terminology accuracy
-  - Summary coherence
+- Reviewed by U.S. equity analysts  
+- Reported improvements in:  
+  - Terminology accuracy  
+  - Summary coherence  
   - Citation traceability
 
 ---
 
-## 🧭 Roadmap
+## Roadmap
 
-- Chart-to-text generation
-- Event-chain reasoning
+- Chart-to-text generation  
+- Event-chain reasoning  
 - Preparing paper for ACL Industry or EMNLP Systems Demo
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 ChatGLM2-6B, InternLM2, Yi-6B, BM25, Faiss-HNSW, Chinese-BERT Cross-Encoder,  
 TruthfulQA, MMLU-Finance, Prompt Injection, LoRA, QLoRA, FastAPI, Docker, Redis, PyTorch Lightning, WandB
