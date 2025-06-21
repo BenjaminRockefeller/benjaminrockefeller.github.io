@@ -1,55 +1,40 @@
-# _config.yml
+name: Deploy site
 
-title: Benjamin Rockefeller
-description: >
-  AI Research | Quantitative Finance | NLP Applications
-baseurl: "" # 如果不是根目录，设置为 "/子路径"
-url: "https://benjaminrockefeller.github.io" # 改为你 GitHub Pages 实际地址
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
 
-# 启用插件
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-include-cache
+permissions:
+  contents: write
 
-# Collections 设置
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-# 导航配置
-nav_pages:
-  - start-here.md
-  - projects.md
-  - cv.md
-  - venture-studio.md
-  - content-universe.md
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
 
-# Markdown 与高亮
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    line_numbers: true
+      - name: Setup Ruby 💎
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.4  # ❗降级为 al-folio 支持的版本
+          bundler-cache: true
 
-# 启用分页（可选）
-paginate: 5
-paginate_path: "/page:num/"
+      - name: Install dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y libvips libmagickwand-dev
+          bundle install
 
-# SEO 设置
-author:
-  name: Benjamin Rockefeller
-  email: your@email.com
+      - name: Build site with Jekyll 🔧
+        run: |
+          bundle exec jekyll build
 
-# Social 图标（可选）
-social_links:
-  github: https://github.com/BenjaminRockefeller
-  linkedin: https://linkedin.com/in/your-id
-  twitter: https://twitter.com/your-id
-
-# Google Analytics（如无可注释）
-google_analytics: ""
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: _site
