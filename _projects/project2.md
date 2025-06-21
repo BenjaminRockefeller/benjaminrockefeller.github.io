@@ -1,14 +1,11 @@
 ---
-layout: page
-title: "Project 2｜Intelligent Quantitative Strategy Generation Platform: Causality-Aware RLHF with Backtest-Integrated Feedback Loop"
+title: "Intelligent Quantitative Strategy Generation Platform : Causality-Aware and RLHF-Based Backtesting Optimization System"
+layout: project
 permalink: /projects/project2/
-importance: 2
+date: 2025-06-22
 category: work
+importance: 1
 ---
-
-# Project 2｜Intelligent Quantitative Strategy Generation Platform
-
-### Causality-Aware RLHF with Backtest-Integrated Feedback Loop
 
 #### Project Overview
 
