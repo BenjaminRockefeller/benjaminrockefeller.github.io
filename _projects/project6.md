@@ -6,60 +6,55 @@ importance: 6
 category: work
 ---
 
-### ✅ Project 6｜Multimodal Content Generation and Publishing Platform  
-(Causality-Aware and Controllable Generation System for Short Video Scripts, Image+Text Content, and Voice-Based Editing)
+# Project 6｜Multimodal Content Generation and Publishing Platform  
+## Causality-Aware and Controllable Generation System for Short Video Scripts, Image+Text Content, and Voice-Based Editing
 
 ---
 
-#### Project Overview  
+### Project Overview
 
-This project introduces **ChatPPT**, a multimodal content automation platform designed to streamline the creative workflow for short video producers, MCN agencies, and e-commerce marketing teams. The platform enables end-to-end automation—from script writing to image-text pairing and voice-controlled publishing—optimized for platforms such as TikTok, Xiaohongshu, and Instagram. It supports natural language input, automated image-text generation, and voice-based real-time control, significantly enhancing both productivity and creative expression.
-
----
-
-#### Project Contributions  
-
-- Led the design and implementation of a full-stack multimodal content chain:  
-  `Text Input → Image+Text Generation → Voice Control → Web Preview`,  
-  enabling 0-to-1 structured content creation in a closed loop.
-
-- Built a multimodal dataset to support the full generation pipeline:  
-  - **Text**: ~20,000 short video scripts across marketing, lifestyle, and educational themes, generated via GPT + template collection.  
-  - **Image**: 25,000 open-source images fetched via Pexels/Pixabay APIs; 15,000 text-image pairs selected using hybrid manual + BERTScore filtering.  
-  - **Voice**: 8,000+ real user voice commands for operations such as "add page", "replace image", "regenerate content".
-
-- Developed a text generation module powered by ChatGLM2.5, with three-stage prompt design:  
-  `Script Theme → Plot Outline → Sectioned Output`.  
-  Included stylistic and character-based control mechanisms.
-
-- Built an image matching engine combining CLIP and BM25 retrieval.  
-  Achieved **Top-1 accuracy of 89.3%**, ensuring semantic-visual alignment between text and visuals.
-
-- Implemented a voice control module using Whisper for transcription and a 12-intent classification model for command execution.  
-  Achieved **93.5% accuracy** in voice-to-action mapping.
-
-- Deployed backend infrastructure using FastAPI + Redis (async task queue)  
-  and Streamlit for the front-end interactive editing and preview interface.  
-  Supported remote access and real-time content updates.
-
-- Achieved generation time of **<90 seconds per full 5-page content unit**,  
-  compared to **~3 hours per unit via manual workflows**, greatly reducing cost and turnaround time.
-
-- Cost-optimized by deploying the prototype on Hugging Face Spaces (free tier).  
-  Backend runs on a single A10 GPU with **marginal cost per content < $0.005**.
+This project introduces **ChatPPT**, a full-stack multimodal content automation platform designed for creators in short video, marketing, and e-commerce domains. The system supports content generation across multiple modalities—text, image, and voice—and enables seamless end-to-end workflows for platforms such as TikTok, Xiaohongshu, and Instagram. It significantly improves productivity by allowing structured creative output from simple natural language instructions, with real-time visual and voice-based control capabilities.
 
 ---
 
-#### Future Roadmap (v2.0 Plan)  
+### Project Contributions
 
-- Introduce **causal graph modeling** for user behavior:  
-  `Click Path → Conversion Outcome`, enabling real-time impact evaluation of generated content.  
-- Support **cross-lingual style transfer**, adapting for Chinese, English, Japanese, Korean, and region-specific cultural nuances.  
-- Integrate **content agent framework** for automatic content generation based on user profile + A/B testing loop.  
-- Launch **Chrome extension and WeChat Mini Program** to complete cross-platform deployment.
+- Designed a full-chain multimodal content pipeline:  
+  **Text Input → Image/Text Synthesis → Voice Command Execution → Web-Based Preview**  
+  enabling end-to-end creative automation.
+
+- Constructed a custom multimodal dataset:
+  - **Text**: 20,000 GPT-generated scripts covering marketing, lifestyle, and educational categories.
+  - **Images**: 25,000 sourced via Pexels/Pixabay APIs; 15,000 high-quality text-image pairs selected using hybrid manual and BERTScore filtering.
+  - **Voice**: 8,000+ annotated real user voice commands covering key interactions (e.g., regenerate, add-slide, replace-visual).
+
+- Implemented a modular script generator based on ChatGLM2.5:  
+  **Three-stage prompt sequence** covering theme selection, plot outline, and segment-wise generation.  
+  Incorporated stylistic and persona-level control switches.
+
+- Developed an image selection engine integrating **CLIP similarity + BM25 retrieval**:  
+  Achieved **Top-1 matching accuracy of 89.3%**, ensuring high semantic-visual alignment.
+
+- Deployed voice control with Whisper + custom intent classification model:  
+  Supported 12 core actions with **93.5% execution accuracy**, enabling hands-free editing and publishing.
+
+- Engineered the backend with FastAPI + Redis (async task queue), and the front-end with Streamlit for real-time user interaction and visualization.  
+  Enabled full remote access and real-time update of generated content.
+
+- Reduced average generation time per 5-slide unit from **~3 hours (manual)** to **<90 seconds (automated)**.  
+  Maintained low compute cost: **<$0.005 per content unit** on A10 GPU using Hugging Face Spaces.
 
 ---
 
-#### Tech Stack  
+### Future Roadmap
 
-ChatGLM2.5, CLIP, Whisper, BM25, BERTScore, FastAPI, Redis, Streamlit, LangChain, PPTX Generator, Pexels API, MongoDB, Docker, Hugging Face Spaces
+- Integrate **causal graph modeling** to link content structure with behavioral outcomes (e.g., clickstream → conversion).
+- Expand to **cross-lingual and culturally adaptive generation**, supporting Chinese, English, Japanese, and Korean.
+- Develop an **autonomous content agent** capable of adaptive generation based on user profile and real-time feedback.
+- Launch **Chrome extension** and **WeChat Mini Program** for cross-platform delivery and mobile workflow.
+
+---
+
+### Tech Stack
+
+ChatGLM2.5, CLIP, Whisper, BM25, BERTScore, FastAPI, Redis, Streamlit, Hugging Face Spaces, MongoDB, Docker, LangChain, PPTX Generator, Pexels API
