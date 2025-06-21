@@ -2,10 +2,11 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: >
-  A curated portfolio of real-world AI engineering systems across multiple domains.
+description: A showcase of my AI, NLP, and Quant Finance projects.
 nav: true
 nav_order: 2
+display_categories: [work]
+horizontal: false
 ---
 ## 🛠️ AI Engineering Projects
 Below is a collection of applied AI systems covering large model deployment, RAG systems, inference optimization, financial modeling, and multi-agent frameworks.
