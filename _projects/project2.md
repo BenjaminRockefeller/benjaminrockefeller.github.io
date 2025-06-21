@@ -1,10 +1,11 @@
 ---
 layout: page
-title: "Project 2｜Intelligent Quantitative Strategy Generation Platform"
+title: "Project 2 | Intelligent Quantitative Strategy Platform"
 permalink: /projects/project2/
 importance: 2
 category: work
 ---
+
 
 <style>
   /* --- local style overrides to make the page more readable & visually striking --- */
