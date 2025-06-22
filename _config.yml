@@ -1,53 +1,10 @@
-name: Deploy site
-
-on:
-  push:
-    branches:
-      - main
-      - master
-    paths:
-      - "assets/**"
-      - "_sass/**"
-      - "_scripts/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1.4'
-          bundler-cache: true
-
-      - name: Install dependencies
-        run: |
-          bundle config set --local path 'vendor/bundle'
-          bundle install --jobs 4 --retry 3
-
-      - name: Build Jekyll site
-        env:
-          JEKYLL_ENV: production
-        run: bundle exec jekyll build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+title: Your Website Title
+remote_theme: alshedivat/al-folio
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
+  - jekyll-archives
+  - jekyll-scholar
