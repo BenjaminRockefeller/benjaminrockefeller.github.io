@@ -3,10 +3,9 @@ layout: homepage
 ---
 ## About Me
 
-Today’s language models speak fluently—but struggle to think.which hallucinate, fail to verify, and can’t explain their own answers.
-
+Today’s language models speak fluently—but struggle to think.which hallucinate, fail to verify, and can’t explain their own answers
 As a researcher in reasoning-centric LLMs at Nanyang Technological University, I work to close this cognitive gap—designing models that don’t just generate, but reason, justify, and self-correct.
- I’ve led the development of reasoning-driven LLM systems—from retrieval-augmented generation and causality-aware modeling to low-latency inference engines for verifiable, scalable deployment.
+I’ve led the development of reasoning-driven LLM systems—from retrieval-augmented generation and causality-aware modeling to low-latency inference engines for verifiable, scalable deployment.
 My recent work focuses on closed-loop generation, where models iteratively refine outputs through embedded self-feedback.
 This includes REFLEXION, a Transformer framework for multi-step self-reflection, and CAT, a citation-aware tagging system that ensures factual grounding.
 Because the future of AI isn’t about more tokens—it’s about building models that know when they’re wrong, and know how to fix it.
