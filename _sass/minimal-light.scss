@@ -1012,171 +1012,62 @@ section p {
   margin-bottom: 1.2em !important;
   word-break: break-word;
 }
-/* ✅ 统一布局逻辑，避免文字压住头像 */
-
-.wrapper {
-  width: 1160px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
-/* 左侧头像区 */
-header {
-  width: 240px;
-  flex-shrink: 0;
-  padding-top: 2.5em;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-/* 头像更大更精致 */
-.image.avatar img {
-  width: 160px;
-  padding: 10px;
-  border-radius: 100%;
-}
-
-/* 右侧正文区 */
-section {
-  flex: 1;
-  margin-left: 2rem; /* 保持间隔防重叠 */
-  padding: 2.5em 2.5rem 50px 2.5rem;
-  max-width: 100%;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  line-height: 1.7;
-}
-
-/* 字体优化 */
-body {
-  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.05rem;
-  color: #111;
-}
-/* === ✅ 布局调整：更靠左 + 上移 + 放大头像 === */
-.wrapper {
-  width: 1160px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
-/* 左侧：头像和信息卡片 */
-header {
-  width: 240px;
-  padding-top: 2.2em; /* 原 2.5em，减少顶部空白 */
-  text-align: center;
-}
-
-/* 更大头像尺寸 */
-.image.avatar img {
-  width: 180px;         /* 原 140px → 180 更醒目 */
-  padding: 10px;
-  border-radius: 100%;
-}
-
-/* 右侧：正文排版区域 */
-section {
-  flex: 1;
-  margin-left: 1.8rem;         /* 让文字更靠近头像，但不重叠 */
-  padding-top: 2.2em;          /* 上移 about me 区域 */
-  padding-bottom: 50px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  max-width: 1020px;
-
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  line-height: 1.7;
-}
-
-/* 字体与段落优化 */
-body {
-  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.05rem;
-  color: #111;
-}
-
-section h2 {
-  margin-top: 1.8rem;
-  margin-bottom: 1.2rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 0.4rem;
-}
-
-section p {
-  margin-bottom: 1.2rem;
-  text-align: justify;
-}
-/* === ✅ 精准对齐布局：靠左对齐、头像放大、顶部紧凑 === */
-
-/* 总体容器：紧凑布局 */
+/* 最外层横向布局 */
 .wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  width: 100%;
+  max-width: 1080px;
   margin: 0 auto;
-  width: 1080px; /* 宽度控制在视口中等宽 */
-  padding-top: 1.5rem; /* ✅ 缩减顶部留白 */
+  padding-top: 1.5rem;
 }
 
-/* 左侧头像与信息栏 */
+/* 左侧固定宽度栏（头像 + 基本信息） */
 header {
-  width: 230px;
+  width: 240px;               /* ✅ 固定宽度，右边根据它来贴近 */
   text-align: center;
-  margin-top: 0rem;   /* ✅ 顶部尽量靠上 */
   padding: 0;
+  margin: 0;
 }
 
-/* 头像大小提升 + 居中 */
+/* 头像放大 */
 .image.avatar img {
-  width: 180px;   /* ✅ 更大 */
+  width: 180px;               /* ✅ 放大头像 */
   border-radius: 100%;
   padding: 6px;
+  margin-bottom: 1rem;
 }
 
-/* 右侧正文区域 */
+/* 右侧内容贴近左边，仅留 2em 空隙 */
 section {
   flex: 1;
-  margin-left: 24px;  /* ✅ 关键点：缩至2汉字宽 */
-  padding-top: 0.5rem; /* ✅ 跟头像对齐 */
-  padding-right: 1.5rem;
-  padding-left: 1.2rem;
-  max-width: none;
-  background-color: #f9f9f9;
+  padding-left: 2em;          /* ✅ 关键：只保留适当留白 */
+  padding-right: 1.5em;
+  padding-top: 0.5em;         /* ✅ 与头像对齐 */
+  background: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  line-height: 1.75;
 }
 
-/* 标题清晰分区 */
+/* 通用文字设置 */
+body {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #111;
+}
+
+/* 标题段落美化 */
 section h2 {
-  margin-top: 2rem;
-  margin-bottom: 1.2rem;
   font-size: 1.6rem;
   font-weight: 600;
+  margin-top: 2rem;
   border-bottom: 2px solid #ccc;
   padding-bottom: 0.4rem;
 }
 
-/* 段落样式清晰 */
 section p {
   margin-bottom: 1.2rem;
   text-align: justify;
-}
-
-/* 设置基础字体 */
-body {
-  font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  color: #111;
-  line-height: 1.75;
 }
