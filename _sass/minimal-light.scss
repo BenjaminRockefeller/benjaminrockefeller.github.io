@@ -802,3 +802,19 @@ p {
     transform: scale(1.2);
   }
 }
+/* ✅ 增大整体宽度，减少留白 */
+.wrapper {
+  width: 1160px;  /* 原为 960px，可调成 1040, 1160, 1280 视屏幕情况而定 */
+  margin: 0 auto;
+}
+
+/* ✅ 右边正文贴近头像，更宽展示 */
+section {
+  width: calc(100% - 260px); /* 原为 650px，改为动态宽度：总宽 - 左边 header 宽 */
+  float: right;
+  padding-top: 4.0em;
+  padding-bottom: 50px;
+  padding-left: 2rem; /* 稍微留点内边距 */
+  padding-right: 1.5rem;
+  max-width: none;  /* 取消宽度限制 */
+}
