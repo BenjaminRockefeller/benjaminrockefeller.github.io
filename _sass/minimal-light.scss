@@ -646,6 +646,57 @@ section {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+/* === Custom Enhancements by ChatGPT: Better Readability & Layout === */
+
+/* ✅ 头像放大 */
+.image.avatar img {
+  border-radius: 100%;
+  width: 130px;  /* 原为 45% 或 117px，现统一为绝对像素 */
+  padding: 10px;
+}
+
+/* ✅ 教育背景文字样式 */
+.education {
+  font-weight: 500;
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-top: 5px;
+  color: #444;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+/* ✅ 正文字体增强 + 字色加深 */
+body {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #2a2a2a; /* 更深，更清晰 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* ✅ 段落间距优化 */
+p {
+  margin-bottom: 1.4em; /* 空出段落距离 */
+  line-height: 1.75;
+}
+
+/* ✅ 限制正文宽度，避免太宽导致阅读困难 */
+section {
+  max-width: 740px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ✅ 暗色模式适配字体增强 */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #dadbdf;
+  }
+  .education {
+    color: #ccc;
+  }
+}
+
 
 /* 强制 Markdown 渲染后的 p 标签形成独立段落 */
 p {
