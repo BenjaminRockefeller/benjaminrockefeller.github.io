@@ -1012,24 +1012,25 @@ section p {
   margin-bottom: 1.2em !important;
   word-break: break-word;
 }
-/* 外层容器结构为水平排布 */
+/* ✅ 整体容器布局更紧凑，左侧栏继续左靠 */
 .wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  max-width: 1140px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding-top: 1rem;
-  padding-left: 1rem;     /* ✅ 让整体往左靠 */
+  padding-top: 0.8rem;
+  padding-left: 0rem;     /* ✅ 彻底贴左 */
 }
 
-/* 左侧栏样式：头像 + 简介 */
+/* ✅ 左侧栏：头像和信息栏左移靠边 */
 header {
-  width: 200px;            /* ✅ 再窄一点，让头像更靠左 */
-  margin-left: 0;          /* ✅ 去掉默认边距 */
+  width: 200px;
+  margin-left: -20px;     /* ✅ 再左移 20px，无截断风险 */
   padding: 0;
   text-align: center;
 }
+
 
 /* 头像样式放大 */
 .image.avatar img {
