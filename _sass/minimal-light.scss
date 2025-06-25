@@ -954,3 +954,42 @@ p {
     color: #3eb7f0;
   }
 }
+/* ✅ 调整正文排版区域：更靠左、更宽、更美观 */
+section {
+  width: calc(100% - 300px);
+  margin-left: 200px;              /* 再向左移，紧贴头像但保留间距 */
+  padding-top: 3.5em;
+  padding-bottom: 50px;
+  padding-left: 2.0rem;
+  padding-right: 2.0rem;
+  max-width: 1080px;
+
+  background-color: #f9f9f9;       /* 卡片背景 */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  line-height: 1.7;                /* 行距提升可读性 */
+}
+
+/* ✅ 设置正文的通用字体为黑体优先 */
+body {
+  font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #111111;
+  font-size: 1.05rem;
+}
+
+/* ✅ 调整标题风格，突出分区 */
+section h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.4rem;
+}
+
+/* ✅ 让每段文字自然换行且有足够间距 */
+section p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
