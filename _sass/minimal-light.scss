@@ -1012,21 +1012,21 @@ section p {
   margin-bottom: 1.2em !important;
   word-break: break-word;
 }
-/* ✅ 整体容器布局更紧凑，左侧栏继续左靠 */
+/* ✅ 容器向左对齐、左侧进一步贴近边缘 */
 .wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   max-width: 1160px;
   margin: 0 auto;
-  padding-top: 0.8rem;
-  padding-left: 0rem;     /* ✅ 彻底贴左 */
+  padding-top: 0.5rem;
+  padding-left: 0rem;     /* ✅ 左侧贴边 */
 }
 
-/* ✅ 左侧栏：头像和信息栏左移靠边 */
+/* ✅ 左栏：头像区域再左移并减少宽度 */
 header {
-  width: 200px;
-  margin-left: -20px;     /* ✅ 再左移 20px，无截断风险 */
+  width: 180px;            /* ✅ 原 200px，精简紧凑 */
+  margin-left: -40px;      /* ✅ 再左移 20px（原 -20px） */
   padding: 0;
   text-align: center;
 }
@@ -1039,11 +1039,10 @@ header {
   margin-bottom: 0.5rem;
 }
 
-/* 主体文字区域样式 */
 section {
   flex: 1;
-  margin-left: 2.8rem;     /* ✅ 保证文字与头像不重叠，但保持贴近 */
-  padding-top: 0.2rem;     /* ✅ 对齐头像顶部 */
+  margin-left: 2.4rem;
+  padding-top: 0.2rem;
   padding-right: 2rem;
   background: #f9f9f9;
   border-radius: 12px;
