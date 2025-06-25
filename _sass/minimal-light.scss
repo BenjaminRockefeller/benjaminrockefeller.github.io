@@ -1076,3 +1076,17 @@ section h1, section h2 {
   margin-top: 0;
   padding-top: 0;
 }
+header h1, header h2 {
+  font-size: 20px;            /* ✅ 缩小字体大小 */
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;        /* ✅ 强制不换行 */
+  overflow: hidden;           /* ✅ 如果溢出隐藏（防止溢出打断布局） */
+  text-overflow: ellipsis;    /* ✅ 超出以“...”表示（可选） */
+}
+header .education,
+header .autocolor {
+  white-space: nowrap;   /* 一行显示 */
+  font-size: 14px;
+}
