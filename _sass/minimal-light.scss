@@ -1012,7 +1012,7 @@ section p {
   margin-bottom: 1.2em !important;
   word-break: break-word;
 }
-/* ✅ 容器向左对齐、左侧进一步贴近边缘 */
+/* ✅ 容器整体左贴边，但保持结构 */
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -1020,16 +1020,17 @@ section p {
   max-width: 1160px;
   margin: 0 auto;
   padding-top: 0.5rem;
-  padding-left: 0rem;     /* ✅ 左侧贴边 */
+  padding-left: 0rem;       /* ✅ 左侧无边距 */
 }
 
-/* ✅ 左栏：头像区域再左移并减少宽度 */
+/* ✅ 左栏头像等元素继续左移 */
 header {
-  width: 180px;            /* ✅ 原 200px，精简紧凑 */
-  margin-left: -40px;      /* ✅ 再左移 20px（原 -20px） */
+  width: 180px;              /* ✅ 精简宽度 */
+  margin-left: -60px;        /* ✅ 继续左移（原 -40px） */
   padding: 0;
   text-align: center;
 }
+
 
 
 /* 头像样式放大 */
