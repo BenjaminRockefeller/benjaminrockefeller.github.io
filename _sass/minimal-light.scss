@@ -1012,45 +1012,45 @@ section p {
   margin-bottom: 1.2em !important;
   word-break: break-word;
 }
-/* 外层布局仍为横向排列 */
+/* 外层容器结构为水平排布 */
 .wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  width: 100%;
-  max-width: 1080px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding-top: 1rem; /* ✅ 顶部压缩一些 */
+  padding-top: 1rem;
+  padding-left: 1rem;     /* ✅ 让整体往左靠 */
 }
 
-/* 左栏保持不动 */
+/* 左侧栏样式：头像 + 简介 */
 header {
-  width: 240px;
-  text-align: center;
-  margin: 0;
+  width: 200px;            /* ✅ 再窄一点，让头像更靠左 */
+  margin-left: 0;          /* ✅ 去掉默认边距 */
   padding: 0;
+  text-align: center;
 }
 
-/* 头像放大 */
+/* 头像样式放大 */
 .image.avatar img {
   width: 180px;
   border-radius: 100%;
-  padding: 5px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-/* ✅ 正文往右偏移一点，避免重叠，约2em间距 */
+/* 主体文字区域样式 */
 section {
   flex: 1;
-  margin-left: 2.4rem;         /* ✅ 关键参数：防止文字撞头像 */
-  padding-top: 0.3rem;         /* ✅ 和头像头部对齐 */
-  padding-right: 1.5rem;
+  margin-left: 2.8rem;     /* ✅ 保证文字与头像不重叠，但保持贴近 */
+  padding-top: 0.2rem;     /* ✅ 对齐头像顶部 */
+  padding-right: 2rem;
   background: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* ✅ 标题更靠上 */
-section h2, section h1 {
-  margin-top: 0.3rem;
+/* 标题微调 */
+section h1, section h2 {
+  margin-top: 0;
+  padding-top: 0;
 }
