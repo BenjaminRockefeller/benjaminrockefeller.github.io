@@ -1176,3 +1176,40 @@ section p {
   margin-bottom: 1.2rem;
   text-align: justify;
 }
+/* 精细布局：头像贴近 About Me，文字仅保留两字距 */
+.wrapper {
+  width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* 左侧头像区域紧凑展示 */
+header {
+  width: 240px;
+  padding-top: 1.2em;  /* 向上贴顶 */
+  text-align: center;
+}
+
+/* 头像加大：提升视觉吸引力 */
+.image.avatar img {
+  width: 200px;       /* 再加大至 200px，优化形象呈现 */
+  padding: 6px;
+  border-radius: 100%;
+}
+
+/* 右侧正文区域紧贴头像，仅留约2字距 ≈ 30px */
+section {
+  flex: 1;
+  margin-left: 30px;  /* ✅关键：控制头像与正文之间仅两字距 */
+  padding-top: 1.2em;
+  padding-bottom: 50px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 1040px;
+
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  line-height: 1.7;
+}
