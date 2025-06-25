@@ -595,3 +595,21 @@ footer {
   display:none;
   font-family: monospace;
 }
+/* === Custom Enhancements: Better Readability === */
+
+body {
+  font-size: 17px;           /* 原默认约为14–15px，调大更适合阅读 */
+  line-height: 1.75;         /* 增加行间距，防止文字挤在一起 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+section {
+  max-width: 740px;          /* 限制右侧正文宽度，更易读 */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* 强制 Markdown 渲染后的 p 标签形成独立段落 */
+p {
+  margin-bottom: 1.2em;
+}
