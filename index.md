@@ -14,6 +14,7 @@ My recent work focuses on closed-loop generation,  where models iteratively refi
 a Transformer framework for multi-step self-reflection,  and **CAT**, a citation-aware tagging system that ensures factual grounding.  
 
 Because the future of AI isn’t about more tokens—  it’s about building models that know when they’re wrong, and know how to fix it.
+
 ---
 ## Research Interests
 
