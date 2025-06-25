@@ -1023,13 +1023,34 @@ section p {
   padding-left: 0rem;       /* ✅ 左侧无边距 */
 }
 
-/* ✅ 左栏头像等元素继续左移 */
+/* ✅ 调整头像与文字容器宽度 */
 header {
-  width: 180px;              /* ✅ 精简宽度 */
-  margin-left: -60px;        /* ✅ 继续左移（原 -40px） */
+  width: 240px;         /* ✅ 原 180px，加宽以容纳长文本 */
+  margin-left: -60px;   /* 保持左移量不变 */
   padding: 0;
   text-align: center;
 }
+
+/* ✅ 姓名一行内强制显示 */
+header h1, header h2 {
+  white-space: nowrap;
+}
+
+/* ✅ 职位一行显示，适配宽度 */
+header .education {
+  font-size: 14.5px;
+  line-height: 1.4;
+  margin-top: 5px;
+  white-space: nowrap;
+  font-weight: 500;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ✅ 大学名称不拆行 */
+header .autocolor {
+  white-space: nowrap;
+}
+
 
 
 
