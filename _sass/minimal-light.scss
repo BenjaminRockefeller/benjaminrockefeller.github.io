@@ -1012,3 +1012,28 @@ section p {
   margin-bottom: 1.2em !important;
   word-break: break-word;
 }
+/* ✅ 头像更大、与 About Me 对齐 */
+header {
+  padding-top: 2.5em !important;        /* 原4.0em，缩小顶部间距 */
+  text-align: center;
+}
+
+.image.avatar img {
+  width: 160px !important;              /* 原为130–140px，提升展示感 */
+  padding: 8px !important;
+  border-radius: 100%;
+}
+
+section {
+  padding-top: 2.5em !important;        /* 与 header 保持同步对齐 */
+  margin-left: 200px;
+  width: calc(100% - 300px);
+  max-width: 1080px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 50px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  line-height: 1.7;
+}
