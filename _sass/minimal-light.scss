@@ -1057,3 +1057,62 @@ body {
   font-size: 1.05rem;
   color: #111;
 }
+/* === ✅ 布局调整：更靠左 + 上移 + 放大头像 === */
+.wrapper {
+  width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* 左侧：头像和信息卡片 */
+header {
+  width: 240px;
+  padding-top: 2.2em; /* 原 2.5em，减少顶部空白 */
+  text-align: center;
+}
+
+/* 更大头像尺寸 */
+.image.avatar img {
+  width: 180px;         /* 原 140px → 180 更醒目 */
+  padding: 10px;
+  border-radius: 100%;
+}
+
+/* 右侧：正文排版区域 */
+section {
+  flex: 1;
+  margin-left: 1.8rem;         /* 让文字更靠近头像，但不重叠 */
+  padding-top: 2.2em;          /* 上移 about me 区域 */
+  padding-bottom: 50px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 1020px;
+
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  line-height: 1.7;
+}
+
+/* 字体与段落优化 */
+body {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.05rem;
+  color: #111;
+}
+
+section h2 {
+  margin-top: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.4rem;
+}
+
+section p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
