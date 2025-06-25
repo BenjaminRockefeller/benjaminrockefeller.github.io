@@ -993,3 +993,22 @@ section p {
   margin-bottom: 1.2rem;
   text-align: justify;
 }
+/* ✅ 修改 About Me 区块排版与字体显示（最终增强版） */
+section {
+  margin-left: 180px !important;     /* 更靠左，更贴近头像 */
+  width: calc(100% - 200px) !important;  /* 让正文更宽 */
+  max-width: 1200px !important;      /* 宽度上限拉高 */
+  font-family: "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 1.05rem !important;     /* 字号适中清晰 */
+  line-height: 1.8 !important;       /* 增加行距，阅读舒适 */
+  color: #111111 !important;         /* 深色文字，更清晰醒目 */
+  padding-top: 3em;
+  padding-left: 1.5rem;
+  padding-right: 2rem;
+}
+
+/* ✅ 段落统一换行与段距增强 */
+section p {
+  margin-bottom: 1.2em !important;
+  word-break: break-word;
+}
