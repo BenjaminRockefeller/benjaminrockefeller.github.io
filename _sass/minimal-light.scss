@@ -849,14 +849,15 @@ p {
 
 /* ✅ 右边正文贴近头像，更宽展示 */
 section {
-  width: calc(100% - 260px); /* 原为 650px，改为动态宽度：总宽 - 左边 header 宽 */
-  float: right;
+  width: calc(100% - 280px);       /* 原为 260px，向左靠近 header */
+  margin-left: 240px;              /* 控制与头像的距离，不要贴边 */
   padding-top: 4.0em;
   padding-bottom: 50px;
-  padding-left: 2rem; /* 稍微留点内边距 */
+  padding-left: 1.5rem;
   padding-right: 1.5rem;
-  max-width: none; /* 取消宽度限制 */
+  max-width: 960px;                /* 限制最大宽度，避免超宽阅读困难 */
 }
+
 
 /* 宽度加大，使正文更贴近头像，展示更多内容 */
 .wrapper {
@@ -871,6 +872,7 @@ body {
   line-height: 1.75;
   color: #2a2a2a;
 }
+
 
 @media (prefers-color-scheme: dark) {
   body {
