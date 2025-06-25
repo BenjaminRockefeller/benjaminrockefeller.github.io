@@ -1118,98 +1118,65 @@ section p {
 }
 /* === ✅ 精准对齐布局：靠左对齐、头像放大、顶部紧凑 === */
 
-/* 整体宽度保持宽阔，便于对齐控制 */
+/* 总体容器：紧凑布局 */
 .wrapper {
-  width: 1160px;
-  margin: 0 auto;
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
+  margin: 0 auto;
+  width: 1080px; /* 宽度控制在视口中等宽 */
+  padding-top: 1.5rem; /* ✅ 缩减顶部留白 */
 }
 
-/* 左侧：头像信息块 */
+/* 左侧头像与信息栏 */
 header {
-  width: 240px;
-  padding-top: 1.5em;       /* 原为 4.0em，大幅上移 */
+  width: 230px;
   text-align: center;
+  margin-top: 0rem;   /* ✅ 顶部尽量靠上 */
+  padding: 0;
 }
 
-/* ⬆️ 放大头像，让视觉更聚焦 */
+/* 头像大小提升 + 居中 */
 .image.avatar img {
-  width: 190px;             /* 原 140px → 190px 更具存在感 */
-  padding: 10px;
+  width: 180px;   /* ✅ 更大 */
   border-radius: 100%;
+  padding: 6px;
 }
 
-/* 右侧：正文内容区 */
+/* 右侧正文区域 */
 section {
   flex: 1;
-  margin-left: 2.4rem;      /* 贴近头像，但保留视觉呼吸空间 ≈ 40px */
-  padding-top: 1.5em;       /* 向上紧缩，保持与头像垂直对齐 */
-  padding-bottom: 50px;
-  padding-left: 1.8rem;
+  margin-left: 24px;  /* ✅ 关键点：缩至2汉字宽 */
+  padding-top: 0.5rem; /* ✅ 跟头像对齐 */
   padding-right: 1.5rem;
-  max-width: 1040px;
-
+  padding-left: 1.2rem;
+  max-width: none;
   background-color: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  line-height: 1.75;
 }
 
-/* 字体与排版样式优化 */
-body {
-  font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.05rem;
-  color: #111;
-  line-height: 1.7;
-}
-
+/* 标题清晰分区 */
 section h2 {
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   font-size: 1.6rem;
   font-weight: 600;
   border-bottom: 2px solid #ccc;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.4rem;
 }
 
+/* 段落样式清晰 */
 section p {
   margin-bottom: 1.2rem;
   text-align: justify;
 }
-/* 精细布局：头像贴近 About Me，文字仅保留两字距 */
-.wrapper {
-  width: 1160px;
-  margin: 0 auto;
-  display: flex;
-  align-items: flex-start;
-}
 
-/* 左侧头像区域紧凑展示 */
-header {
-  width: 240px;
-  padding-top: 1.2em;  /* 向上贴顶 */
-  text-align: center;
-}
-
-/* 头像加大：提升视觉吸引力 */
-.image.avatar img {
-  width: 200px;       /* 再加大至 200px，优化形象呈现 */
-  padding: 6px;
-  border-radius: 100%;
-}
-
-/* 右侧正文区域紧贴头像，仅留约2字距 ≈ 30px */
-section {
-  flex: 1;
-  margin-left: 30px;  /* ✅关键：控制头像与正文之间仅两字距 */
-  padding-top: 1.2em;
-  padding-bottom: 50px;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  max-width: 1040px;
-
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  line-height: 1.7;
+/* 设置基础字体 */
+body {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  color: #111;
+  line-height: 1.75;
 }
