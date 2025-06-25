@@ -818,3 +818,22 @@ section {
   padding-right: 1.5rem;
   max-width: none;  /* 取消宽度限制 */
 }
+/* 宽度加大，使正文更贴近头像，展示更多内容 */
+.wrapper {
+  width: 1080px;  /* 原为 960px，可自行调大 */
+  margin: 0 auto;
+}
+
+/* 使用中文黑体或等效西文字体，增强可读性 */
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #2a2a2a;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #dadbdf;
+  }
+}
