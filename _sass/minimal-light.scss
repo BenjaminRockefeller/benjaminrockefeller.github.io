@@ -1116,3 +1116,63 @@ section p {
   margin-bottom: 1.2rem;
   text-align: justify;
 }
+/* === ✅ 精准对齐布局：靠左对齐、头像放大、顶部紧凑 === */
+
+/* 整体宽度保持宽阔，便于对齐控制 */
+.wrapper {
+  width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* 左侧：头像信息块 */
+header {
+  width: 240px;
+  padding-top: 1.5em;       /* 原为 4.0em，大幅上移 */
+  text-align: center;
+}
+
+/* ⬆️ 放大头像，让视觉更聚焦 */
+.image.avatar img {
+  width: 190px;             /* 原 140px → 190px 更具存在感 */
+  padding: 10px;
+  border-radius: 100%;
+}
+
+/* 右侧：正文内容区 */
+section {
+  flex: 1;
+  margin-left: 2.4rem;      /* 贴近头像，但保留视觉呼吸空间 ≈ 40px */
+  padding-top: 1.5em;       /* 向上紧缩，保持与头像垂直对齐 */
+  padding-bottom: 50px;
+  padding-left: 1.8rem;
+  padding-right: 1.5rem;
+  max-width: 1040px;
+
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 字体与排版样式优化 */
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.05rem;
+  color: #111;
+  line-height: 1.7;
+}
+
+section h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+}
+
+section p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
