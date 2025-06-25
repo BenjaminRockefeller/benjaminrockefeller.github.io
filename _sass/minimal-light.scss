@@ -1012,7 +1012,7 @@ section p {
   margin-bottom: 1.2em !important;
   word-break: break-word;
 }
-/* 最外层横向布局 */
+/* 外层布局仍为横向排列 */
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -1020,54 +1020,37 @@ section p {
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
-  padding-top: 1.5rem;
+  padding-top: 1rem; /* ✅ 顶部压缩一些 */
 }
 
-/* 左侧固定宽度栏（头像 + 基本信息） */
+/* 左栏保持不动 */
 header {
-  width: 240px;               /* ✅ 固定宽度，右边根据它来贴近 */
+  width: 240px;
   text-align: center;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 /* 头像放大 */
 .image.avatar img {
-  width: 180px;               /* ✅ 放大头像 */
+  width: 180px;
   border-radius: 100%;
-  padding: 6px;
+  padding: 5px;
   margin-bottom: 1rem;
 }
 
-/* 右侧内容贴近左边，仅留 2em 空隙 */
+/* ✅ 正文往右偏移一点，避免重叠，约2em间距 */
 section {
   flex: 1;
-  padding-left: 2em;          /* ✅ 关键：只保留适当留白 */
-  padding-right: 1.5em;
-  padding-top: 0.5em;         /* ✅ 与头像对齐 */
+  margin-left: 2.4rem;         /* ✅ 关键参数：防止文字撞头像 */
+  padding-top: 0.3rem;         /* ✅ 和头像头部对齐 */
+  padding-right: 1.5rem;
   background: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-/* 通用文字设置 */
-body {
-  font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.75;
-  color: #111;
-}
-
-/* 标题段落美化 */
-section h2 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 0.4rem;
-}
-
-section p {
-  margin-bottom: 1.2rem;
-  text-align: justify;
+/* ✅ 标题更靠上 */
+section h2, section h1 {
+  margin-top: 0.3rem;
 }
