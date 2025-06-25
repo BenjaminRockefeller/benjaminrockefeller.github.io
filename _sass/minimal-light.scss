@@ -1012,3 +1012,48 @@ section p {
   margin-bottom: 1.2em !important;
   word-break: break-word;
 }
+/* ✅ 统一布局逻辑，避免文字压住头像 */
+
+.wrapper {
+  width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* 左侧头像区 */
+header {
+  width: 240px;
+  flex-shrink: 0;
+  padding-top: 2.5em;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* 头像更大更精致 */
+.image.avatar img {
+  width: 160px;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+/* 右侧正文区 */
+section {
+  flex: 1;
+  margin-left: 2rem; /* 保持间隔防重叠 */
+  padding: 2.5em 2.5rem 50px 2.5rem;
+  max-width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  line-height: 1.7;
+}
+
+/* 字体优化 */
+body {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.05rem;
+  color: #111;
+}
