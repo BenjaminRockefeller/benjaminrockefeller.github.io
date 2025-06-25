@@ -709,3 +709,96 @@ p {
   line-height: 1.5;
   text-align: center;
 }
+/* === Global Enhancements === */
+
+body {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #2a2a2a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+  width: 1140px;  /* 原为 960px，增大整体内容宽度 */
+  margin: 0 auto;
+}
+
+section {
+  max-width: 880px;  /* 原为 740px，放宽内容区域 */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.education {
+  font-weight: 500;
+  font-size: 14.5px;
+  line-height: 1.5;
+  text-align: center;
+  color: #444;
+  font-family: "Segoe UI", sans-serif;
+  margin-top: 5px;
+  white-space: nowrap; /* 防止被拆行 */
+}
+
+.autocolor {
+  color: #595959;
+  white-space: nowrap; /* 防止中英文空格导致换行 */
+}
+
+.image.avatar img {
+  border-radius: 100%;
+  width: 130px;  /* 原为 45% 或 117px */
+  padding: 10px;
+}
+
+/* 段落优化 */
+p {
+  margin-bottom: 1.4em;
+  line-height: 1.75;
+}
+
+/* 暗色模式适配 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #20212b;
+    color: #dadbdf;
+  }
+  .autocolor, .education {
+    color: #ccc;
+  }
+  a {
+    color: #3eb7f0;
+  }
+}
+
+/* 保留社交图标 hover 效果与按钮样式 */
+.social-icons a {
+  display: inline-block;
+  height: 2.4rem;
+  width: 2.4rem;
+  background-color: transparent;
+  color: #043361 !important;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 2.4rem;
+  margin-right: 1rem;
+}
+
+.social-icons a:last-child {
+  margin-right: 0;
+}
+
+.social-icons a:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .social-icons a:hover {
+    background-color: #20212b;
+    color: black;
+    transform: scale(1.2);
+  }
+}
