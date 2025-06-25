@@ -849,13 +849,13 @@ p {
 
 /* ✅ 右边正文贴近头像，更宽展示 */
 section {
-  width: calc(100% - 300px);       /* 更大范围，意味着更靠左 */
-  margin-left: 220px;              /* 原240px，向头像更靠近 */
+  width: calc(100% - 280px);       /* 更宽展示文字（减少留白） */
+  margin-left: 200px;              /* 向头像靠近20px，达到美学黄金点 */
   padding-top: 4.0em;
   padding-bottom: 50px;
-  padding-left: 1.2rem;
+  padding-left: 1rem;              /* 更紧凑的内边距 */
   padding-right: 1.5rem;
-  max-width: 1040px;               /* 更宽展示更多文字 */
+  max-width: 1100px;               /* 放宽最大行宽 */
 }
 
 
