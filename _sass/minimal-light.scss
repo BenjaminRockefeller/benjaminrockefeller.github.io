@@ -1276,3 +1276,23 @@ header .education {
   color: #3a8edb;                /* 保持蓝色调 */
   margin-bottom: 6px;
 }
+header {
+  width: 250px; /* 原为 220px 或更小时可能会断行，可略微调宽 */
+}
+/* ✅ 职业信息：缩小字号、强制一行显示 */
+.autocolor {
+  font-size: 13px;               /* 缩小字号 */
+  white-space: nowrap;           /* 强制不换行 */
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* ✅ 教育信息：缩小字号、强制一行显示 */
+.education {
+  font-size: 13px;               /* 同样缩小字体 */
+  white-space: nowrap;           /* 保证一行 */
+  text-align: center;
+  color: #3a8edb;                /* 保持蓝色调 */
+  margin-bottom: 6px;
+}
