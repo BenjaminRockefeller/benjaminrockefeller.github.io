@@ -1608,3 +1608,59 @@ header p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* ✅ 统一排版修正方案 */
+
+/* 左侧头像栏固定宽度，并靠左 */
+header {
+  width: 280px !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 4rem;
+}
+
+/* 头像优化为长方形+圆角 */
+.image.avatar img {
+  width: 120px !important;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* 姓名字体优化 */
+header h1 {
+  font-size: 18px !important;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* 三行信息统一样式 */
+header p {
+  font-size: 13px !important;
+  line-height: 1.6;
+  margin: 4px 0;
+  white-space: nowrap;
+  text-align: left;
+  color: #111;
+}
+
+/* 正文区域整体右偏，避开左栏 */
+section {
+  margin-left: 300px !important;
+  max-width: 1100px;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  line-height: 1.8;
+  color: #111;
+  font-size: 1.05rem;
+  font-family: "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+}
