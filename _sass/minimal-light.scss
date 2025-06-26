@@ -1337,4 +1337,25 @@ header {
   text-align: center;
   padding-left: 10px; /* 原来可能是 20px 或更多 */
 }
+header {
+  text-align: left;         /* 从居中改为靠左 */
+  padding-left: 0px !important;
+  margin-left: -20px;       /* 主动往左拉一点 */
+}
+
+.image.avatar {
+  display: inline-block;    /* 改为行内块，避免默认居中 */
+  margin-left: 0px !important;
+}
+
+header p,
+header h1,
+header h2,
+header h3,
+header .education,
+header .positionline {
+  text-align: left;
+  margin-left: -10px;
+}
+
 
