@@ -1516,3 +1516,44 @@ header p:nth-child(5) {
 header {
   width: 260px !important;
 }
+/* === 最终优化：头像区域左对齐 + 职业信息单行显示 === */
+header {
+  width: 260px;               /* 保证左栏足够宽 */
+  margin-left: -20px;         /* 向左贴近页面边缘 */
+  padding-left: 0;
+  text-align: left;
+}
+
+.image.avatar {
+  display: block;
+  margin-left: 0 !important;
+}
+
+.image.avatar img {
+  width: 120px !important;
+  height: auto !important;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+header h1 {
+  font-size: 18px !important;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-bottom: 6px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+header p {
+  font-size: 13px !important;
+  line-height: 1.5;
+  margin: 2px 0;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #111;
+}
