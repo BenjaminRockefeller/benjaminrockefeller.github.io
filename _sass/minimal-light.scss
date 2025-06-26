@@ -684,23 +684,44 @@ section {
 
 /* === Custom Enhancements by ChatGPT: Better Readability & Layout === */
 
-/* ✅ 头像放大 */
+/* 修改头像图片为长方形 + 圆角 + 自然宽高 */
 .image.avatar img {
-  border-radius: 100%;
-  width: 130px; /* 原为 45% 或 117px，现统一为绝对像素 */
-  padding: 10px;
+  border-radius: 12px;      /* 可选，建议适度圆角 */
+  width: 130px;
+  height: auto;
+  object-fit: cover;
+  padding: 8px;
 }
 
-/* ✅ 教育背景文字样式 */
-.education {
-  font-weight: 500;
-  font-size: 14.5px;
-  line-height: 1.6;
-  margin-top: 5px;
-  color: #444;
-  font-family: "Segoe UI", sans-serif;
+
+/* 姓名部分：加粗、保持居中 */
+header h1 {
+  font-weight: 700;
+  font-size: 20px;
+  white-space: nowrap;
   text-align: center;
+  margin-bottom: 0.6rem;
 }
+
+/* 职位部分：强制单行、略小字号、左对齐 */
+header .autocolor {
+  white-space: nowrap;
+  font-size: 14px;
+  text-align: left;
+  margin: 0 auto 0.2rem;
+  width: fit-content;
+}
+
+/* 学校部分：强制单行、略小字号、左对齐 */
+header .education {
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  margin: 0 auto;
+  width: fit-content;
+}
+
 
 /* ✅ 正文字体增强 + 字色加深 */
 body {
@@ -890,12 +911,15 @@ body {
   line-height: 1.75;
 }
 
-/* ✅ 头像放大居中，增加展示感 */
+/* 修改头像图片为长方形 + 圆角 + 自然宽高 */
 .image.avatar img {
-  width: 140px;
-  padding: 12px;
-  border-radius: 100%;
+  border-radius: 12px;      /* 可选，建议适度圆角 */
+  width: 130px;
+  height: auto;
+  object-fit: cover;
+  padding: 8px;
 }
+
 
 /* ✅ 左侧整体文本居中（包括教育背景） */
 header {
@@ -1118,4 +1142,91 @@ header .education {
   line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/* 姓名部分：加粗、保持居中 */
+header h1 {
+  font-weight: 700;
+  font-size: 20px;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+/* 职位部分：强制单行、略小字号、左对齐 */
+header .autocolor {
+  white-space: nowrap;
+  font-size: 14px;
+  text-align: left;
+  margin: 0 auto 0.2rem;
+  width: fit-content;
+}
+
+/* 学校部分：强制单行、略小字号、左对齐 */
+header .education {
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  margin: 0 auto;
+  width: fit-content;
+}
+/* 修改头像图片为长方形 + 圆角 + 自然宽高 */
+.image.avatar img {
+  border-radius: 12px;      /* 可选，建议适度圆角 */
+  width: 130px;
+  height: auto;
+  object-fit: cover;
+  padding: 8px;
+}
+/* === 头像设置为长方形 + 圆角 === */
+.image.avatar img {
+  width: 130px;              /* 头像宽度 */
+  height: auto;              /* 高度自适应，保留比例 */
+  object-fit: cover;         /* 填满但不变形 */
+  border-radius: 12px;       /* 设置圆角，非椭圆 */
+  padding: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* === 姓名标题加粗 + 居中显示 === */
+header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+/* === 职业信息：单独成行，略小字号，左对齐 === */
+header .autocolor {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2a2a2a;
+  text-align: left;
+  margin: 0.3rem auto;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+/* === 教育背景：单独一行，统一样式，左对齐 === */
+header .education {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  color: #0077b5;
+  margin: 0.3rem auto;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+/* ✅ 暗色模式适配（可选） */
+@media (prefers-color-scheme: dark) {
+  header .autocolor,
+  header .education {
+    color: #dadbdf;
+  }
 }
