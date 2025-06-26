@@ -1296,3 +1296,26 @@ header {
   color: #3a8edb;                /* 保持蓝色调 */
   margin-bottom: 6px;
 }
+/* 职业行：不换行 + 字号小一点 */
+.roleline {
+  font-size: 13px;
+  white-space: nowrap;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+
+/* 学校行：同样不换行 + 蓝色高亮 */
+.universityline {
+  font-size: 13px;
+  white-space: nowrap;
+  color: #3a8edb;
+  text-align: center;
+  margin-bottom: 8px;
+}
+header {
+  width: 250px;  /* 如果之前是220px，可能太窄 */
+}
+<p class="roleline">LLM Engineer · AI Researcher</p>
+<p class="universityline">Nanyang Technological University</p>
