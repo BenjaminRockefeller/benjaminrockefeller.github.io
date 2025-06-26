@@ -1557,3 +1557,54 @@ header p {
   text-overflow: ellipsis;
   color: #111;
 }
+/* === HEADER FIX：左侧头像区域彻底左靠且不被正文遮挡 === */
+header {
+  width: 260px !important;        /* ⬅️ 头像区宽度必须够，防止断行 */
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 4rem;
+  z-index: 1000;
+}
+
+/* === SECTION FIX：正文区域给足 margin-left，避开左栏 === */
+section {
+  margin-left: 280px !important;   /* ⬅️ 必须大于 header 宽度 */
+  max-width: 1000px;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* === 头像样式：方形小圆角 === */
+.image.avatar img {
+  width: 120px !important;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px !important;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+/* === 姓名、职位、学校、邮箱样式优化 === */
+header h1 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+header p {
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-align: left;
+  margin: 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
