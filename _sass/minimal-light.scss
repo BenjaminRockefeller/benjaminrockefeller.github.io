@@ -1698,3 +1698,54 @@ section {
   margin-bottom: 12px;
   display: block;
 }
+/* === 整体结构布局 === */
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  gap: 3rem; /* 左右间隔，控制 header 与正文之间的距离 */
+}
+
+/* === 左侧头像 + 简介 === */
+header {
+  width: 230px;
+  text-align: left;
+  flex-shrink: 0;  /* 保持固定宽度 */
+}
+
+/* === 正文区域 === */
+section {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #111;
+  font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+.image.avatar img {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  white-space: nowrap;
+}
+
+header p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0.2rem 0;
+  white-space: nowrap;
+}
