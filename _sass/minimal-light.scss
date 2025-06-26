@@ -1358,4 +1358,22 @@ header .positionline {
   margin-left: -10px;
 }
 
+header {
+  text-align: left;
+  margin-left: -30px; /* 你可根据需要调为 -40px、-50px 等，向左靠近页面边缘 */
+  padding-left: 0px;
+}
+
+.image.avatar {
+  display: inline-block;
+  margin-left: 0px !important;
+}
+.education {
+  font-size: 13px !important; /* 原字体可能是14–16px，改为13px更适配 */
+  white-space: nowrap;        /* 防止换行 */
+  display: block;
+  text-align: left;
+  line-height: 1.4;
+  margin-left: -2px;          /* 微调位置，更贴左边 */
+}
 
