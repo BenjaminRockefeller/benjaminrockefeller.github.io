@@ -1664,3 +1664,37 @@ section {
   font-size: 1.05rem;
   font-family: "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
 }
+/* ✅ 左侧头像 + 文字统一右移靠近正文，但留出间距 */
+
+header {
+  width: 260px;
+  margin-left: 40px;     /* ✅ 头像整体右移，与正文保持贴近但不重叠 */
+  padding-left: 0;
+  padding-top: 4rem;
+  text-align: left;
+  position: fixed;
+}
+
+/* ✅ 正文区域不再左移，保留默认位置，确保与左栏留有空间 */
+section {
+  margin-left: 340px !important;  /* ✅ 260px宽度 + 40px间距 + buffer */
+  max-width: 1080px;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  font-family: "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: #111;
+}
+
+/* ✅ 头像样式方形 + 圆角 */
+.image.avatar img {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: block;
+}
