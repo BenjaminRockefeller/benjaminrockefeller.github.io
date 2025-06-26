@@ -1463,3 +1463,43 @@ header p {
   text-align: left;
   white-space: nowrap;
 }
+/* === Header 样式优化：对齐 + 字号统一 + 容器紧凑 === */
+
+/* 让左栏更贴边 */
+header {
+  width: 260px;
+  padding-left: 10px !important;
+  margin-left: 0 !important;
+  text-align: left;
+}
+
+/* 调整头像为方形 + 稍小 */
+.image.avatar img {
+  border-radius: 4px !important;
+  width: 120px !important;
+  height: auto !important;
+}
+
+/* 姓名行：字号适中，单行显示 */
+header h1 {
+  font-size: 18px !important;
+  margin: 8px 0 6px 0;
+  white-space: nowrap;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* 下方职位、学校、邮箱统一字号与样式 */
+header p {
+  font-size: 13px !important;
+  line-height: 1.6;
+  margin: 3px 0;
+  white-space: nowrap;
+  text-align: left;
+  color: #111;
+}
+
+/* 邮箱保持一行展示 */
+header p:nth-child(5) {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
