@@ -1436,3 +1436,30 @@ header h1 {
   margin: 2px 0;
   white-space: nowrap;
 }
+/* 让左栏更宽，避免文字换行溢出 */
+header {
+  width: 260px; /* 原本是 232px 太窄了，260px更合适 */
+}
+
+/* 头像改为方形，更精致紧凑 */
+.image.avatar img {
+  border-radius: 8px !important;  /* 方形或稍微圆角 */
+  width: 120px !important;
+  height: auto !important;
+}
+
+/* 名字字号稍大，单行显示 */
+header h1 {
+  font-size: 18px !important;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+/* 调整下面三行小文字的字号 + 行高 + 居中对齐 */
+header p {
+  font-size: 13px !important;
+  line-height: 1.6;
+  margin-bottom: 4px;
+  text-align: left;
+  white-space: nowrap;
+}
