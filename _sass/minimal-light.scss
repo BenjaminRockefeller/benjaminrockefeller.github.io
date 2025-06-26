@@ -1317,4 +1317,24 @@ header {
 header {
   width: 250px;  /* 如果之前是220px，可能太窄 */
 }
+/* 添加在 style.scss 或 style-no-dark-mode.scss */
+.positionline,
+.education {
+  font-size: 13.5px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #444;
+  text-align: center;
+  white-space: nowrap;  /* 强制不换行 */
+  margin: 4px 0;
+}
+.wrapper {
+  width: 1160px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  padding-left: 10px; /* 原来可能是 20px 或更多 */
+}
 
