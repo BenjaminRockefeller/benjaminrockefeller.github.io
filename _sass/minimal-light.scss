@@ -1503,3 +1503,16 @@ header p {
 header p:nth-child(5) {
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
+/* 强制设置主内容区域的左边距，避开左栏 */
+
+#main {
+  margin-left: 280px !important; /* 保证 main 内容不被 sidebar 压住 */
+  padding-right: 30px;
+}
+#sidebar {
+  width: 260px !important;
+}
+
+header {
+  width: 260px !important;
+}
