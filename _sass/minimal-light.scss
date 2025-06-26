@@ -1408,3 +1408,31 @@ header h1 {
   text-align: left;
 }
 
+.profile-header {
+  text-align: left;
+  margin-left: -30px;
+  width: 250px; /* ✅ 确保够宽，防止文字溢出 */
+}
+
+.image.avatar img {
+  border-radius: 6px;
+  width: 100%;
+  max-width: 130px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: visible;
+  margin-bottom: 10px;
+}
+
+.info-line {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 2px 0;
+  white-space: nowrap;
+}
