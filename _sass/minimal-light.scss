@@ -1749,3 +1749,18 @@ header p {
   margin: 0.2rem 0;
   white-space: nowrap;
 }
+header {
+  margin-left: 60px;     // 控制向右偏移
+  max-width: 300px;      // 限定宽度，避免重叠
+}
+
+.image.avatar {
+  margin-bottom: 10px;
+}
+
+header h1,
+header .title-line {
+  margin: 4px 0;
+  font-size: 16px;        // 保持一致字号
+  line-height: 1.4;
+}
