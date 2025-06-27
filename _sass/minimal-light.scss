@@ -44,11 +44,12 @@ header {
 }
 
 section {
-  margin-left: 240px;
-  padding-left: 2rem;
-  width: calc(100% - 240px);
+  margin-left: 180px;        /* 原值240px，向左靠近头像 */
+  padding-left: 1rem;        /* 原值2rem，减少空隙 */
+  width: calc(100% - 200px); /* 与 margin 匹配 */
   font-size: 1.05rem;
 }
+
 
 /* ===== 头像区域 ===== */
 .image.avatar img {
@@ -90,7 +91,11 @@ section {
   pointer-events: none;
   display: block;
   margin: 0.15rem 0;
+  white-space: nowrap; /* 确保单行显示 */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 
 .email {
   font-family: "Roboto Mono", monospace;
