@@ -1,78 +1,32 @@
-# Basic Information 
+# _config.yml
 
+# ===== 核心信息 =====
 title: "Benjamin L. Rockefeller"
 position: "LLM Engineer · AI Researcher"
 affiliation: "Nanyang Technological University"
-email: jianming001@e.ntu.edu.sg
-canonical: https://benjaminrockefeller.github.io/
+email: "jianming001@e.ntu.edu.sg"
+baseurl: ""
+url: "https://benjaminrockefeller.github.io"
 
-
-# ======================
-# 🔍 SEO 设置（搜索引擎优化）
-# ======================
-
-keywords: >
-  Benjamin Rockefeller, Lai Jianming, 赖建铭,
-  AI, artificial intelligence, applied AI, trustworthy AI, explainable AI, AI safety, secure AI, edge AI,
-  LLM, large language models, generative AI, instruction tuning, fine-tuning,
-  model compression, distillation, quantization, low-rank adaptation, LoRA, QLoRA,
-  reinforcement learning with human feedback, RLHF,
-  retrieval-augmented generation, RAG, context-aware generation,
-  natural language processing, NLP, prompt engineering, reasoning systems, cognitive architectures,
-  transformer models, machine learning, deep learning,
-  knowledge graphs, graph neural networks, GNN,
-  multi-agent systems, agent-based modeling,
-  private deployment, autonomous systems,
-  quant finance, algorithmic trading, financial LLM,
-  research engineer, AI researcher, LLM engineer, AI PhD applicant
-
-description: >
-  I’m an LLM systems researcher and engineer focused on making language models usable, reliable, and scalable in the real world. 
-  At NTU Singapore, I’ve led RAG pipelines, voice-interactive agents, causality-driven generators, and low-latency inference infrastructure—built for reasoning, adaptation, and deployment. 
-  My edge is the fusion of deep model expertise and product strategy—translating intelligence into impact.
-
-canonical: https://benjaminrockefeller.github.io
-
-
-# Links 
-cv_link: assets/files/Benjamin_CV.pdf  # ← 你的简历文件路径（我们稍后会上传）
-github_link: https://github.com/BenjaminRockefeller
-linkedin: https://www.linkedin.com/in/benjamin-rockefeller
-
-# Images (e.g., your profile picture and your website's favicon) 
-# "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/img/ben.jpg
-favicon: ./assets/img/favicon.png
-favicon_dark: ./assets/img/favicon-dark.png
-
-# Footnote
-# You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
-enable_footnote: false
-
-# Auto Dark Mode
-# You may use the option to disable the automatic dark theme
+# ===== 显示控制 =====
+strict_single_line: true  # 强制所有关键信息单行显示
+font: "Sans Serif"
 auto_dark_mode: true
 
-# Font
-# You can use this option to choose between Serif or Sans Serif fonts.
-font: "Sans Serif" 
+# ===== 资源路径 =====
+avatar: "assets/img/avatar.jpg"
+favicon: "assets/img/favicon.png"
+favicon_dark: "assets/img/favicon-dark.png"
 
-# Google Analytics ID
-# Please remove this if you don't use Google Analytics
-google_analytics: 
+# ===== 社交链接 =====
+links:
+  cv: "assets/files/CV.pdf"
+  github: "https://github.com/BenjaminRockefeller"
+  linkedin: "https://linkedin.com/in/benjamin-rockefeller"
 
-# Use this project as a remote theme for GitHub Pages
-# See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
-remote_theme: yaoyao-liu/minimal-light
-
-# The following files will be removed from the generated website.
+# ===== 构建设置 =====
+plugins:
+  - jekyll-seo-tag
 exclude:
   - Gemfile
-  - Gemfile.lock
   - README.md
-  - README_zh_Hans.md
-  - README_zh_Hant.md
-  - README_de.md
-  - LICENSE
-  - minimal-light.gemspec
-  - html_source_file/
