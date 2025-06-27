@@ -1,101 +1,118 @@
-/* ===== 全局布局重置 ===== */
+/* ===== 全局样式重置 ===== */
 :root {
   --primary-color: #043361;
   --secondary-color: #3eb7f0;
   --text-color: #2a2a2a;
   --bg-color: #fff;
   --card-bg: #f9f9f9;
-  --border-color: #e5e5e5;
 }
 
 [data-theme="dark"] {
   --primary-color: #3eb7f0;
   --text-color: #dadbdf;
   --bg-color: #20212b;
-  --card-bg: #252631;
 }
 
 body {
   font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  font-weight: 400; /* 统一字体粗细 */
   color: var(--text-color);
   background-color: var(--bg-color);
 }
 
-/* ===== 主要布局调整 ===== */
+/* ===== 主布局结构 ===== */
 .wrapper {
   display: flex;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding-top: 1.5rem; /* 减少顶部空白 */
+  padding-top: 1rem;
 }
 
+/* ===== 左侧头像区域 ===== */
 header {
-  width: 280px;
+  width: 240px;
   position: fixed;
-  padding: 0 1rem;
+  padding-right: 1.5rem;
 }
 
-section {
-  margin-left: 320px; /* 正文右移 */
-  padding: 0 2rem;
-  width: calc(100% - 320px);
-}
-
-/* ===== 头像区域优化 ===== */
 .profile-header {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
+/* 长方形头像设置 */
 .image.avatar img {
-  width: 150px; /* 放大头像 */
-  height: 150px;
+  width: 150px;  /* 宽度大于高度 */
+  height: 120px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 0.8rem; /* 减少下方间距 */
+  margin-bottom: 0.8rem;
 }
 
-/* ===== 个人信息排版 ===== */
+/* 个人信息排版 */
 .profile-info h1 {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 20px; /* 适当减小字号 */
+  font-weight: 600;
   color: var(--primary-color);
+  white-space: nowrap; /* 确保不换行 */
   margin-bottom: 0.3rem;
-  white-space: nowrap; /* 防止姓名断行 */
 }
 
 .profile-meta {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
 .profile-meta p {
   margin: 0.2rem 0;
-  white-space: nowrap; /* 防止学校名称断行 */
+  white-space: nowrap;
 }
 
-/* ===== 正文内容优化 ===== */
-h2 {
-  font-size: 1.5rem;
-  margin: 1.2rem 0 0.8rem; /* 减少标题间距 */
-  padding-top: 0.5rem;
-}
-
-p {
-  margin-bottom: 1rem; /* 减少段落间距 */
-  text-align: justify;
-}
-
-/* ===== 社交图标调整 ===== */
+/* 放大社交图标 */
 .social-icons {
   margin: 1rem 0;
 }
 
+.social-icons a {
+  font-size: 1.4rem; /* 放大图标 */
+  margin-right: 0.7rem;
+}
+
+/* ===== 右侧内容区域 ===== */
+section {
+  margin-left: 250px; /* 向左靠拢 */
+  padding-left: 1.5rem;
+  width: calc(100% - 250px);
+}
+
+/* 增大正文字号 */
+section {
+  font-size: 17px; /* 从16px增大 */
+  line-height: 1.7;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1.1rem; /* 适当段落间距 */
+  text-align: justify;
+  font-weight: 400; /* 取消加粗 */
+}
+
+/* ===== 对齐系统 ===== */
+/* 确保头像顶部与About Me对齐 */
+.profile-header, 
+section h2:first-child {
+  padding-top: 0.5rem; /* 相同的顶部间距 */
+}
+
 /* ===== 响应式设计 ===== */
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .wrapper {
     flex-direction: column;
   }
@@ -104,7 +121,7 @@ p {
     position: static;
     width: 100%;
     display: flex;
-    align-items: center;
+    padding-right: 0;
     margin-bottom: 1rem;
   }
   
@@ -117,17 +134,22 @@ p {
   section {
     margin-left: 0;
     width: 100%;
+    padding-left: 0;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 500px) {
   .profile-header {
     flex-direction: column;
     align-items: flex-start;
   }
   
   .image.avatar img {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 100px;
+  }
+  
+  section {
+    font-size: 16px;
   }
 }
