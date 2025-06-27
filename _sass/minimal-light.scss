@@ -1,89 +1,168 @@
-/* ===== 全局重置 ===== */
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400; /* 统一字体粗细 */
-  line-height: 1.6;
-  color: #333;
+/* ===== 全局样式重置 ===== */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-color: #333;
+  --bg-color: #fefefe;
+  --card-bg: #fff;
+  --border-color: #e0e0e0;
 }
 
-/* ===== 布局调整 ===== */
-.container {
-  max-width: 1000px; /* 缩小整体宽度 */
+[data-theme="dark"] {
+  --primary-color: #ecf0f1;
+  --text-color: #f5f5f5;
+  --bg-color: #222;
+  --card-bg: #2d2d2d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+/* ===== 主布局结构 ===== */
+.wrapper {
+  display: flex;
+  max-width: 1100px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 160px 1fr; /* 左栏变窄 */
-  gap: 1.2rem; /* 缩小间距 */
-  padding: 1rem;
+  padding-top: 0;
+}
+
+header {
+  width: 220px;
+  position: fixed;
+  padding-right: 1rem;
+}
+
+section {
+  margin-left: 240px;
+  padding-left: 2rem;
+  width: calc(100% - 240px);
+  font-size: 1.05rem;
 }
 
 /* ===== 头像区域 ===== */
-.profile-header {
-  width: 160px;
-}
-
-.avatar {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+.image.avatar img {
+  width: 150px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
   margin-bottom: 0.8rem;
 }
 
-/* ===== 个人信息 - 严格单行控制 ===== */
+/* ===== 个人信息 ===== */
 .profile-info h1 {
-  font-size: 1.4rem;
-  font-weight: 600; /* 仅姓名加粗 */
-  margin-bottom: 0.4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
 }
 
 .profile-meta {
   font-size: 0.9rem;
-  line-height: 1.4; /* 减小行距 */
+  line-height: 1.5;
+  color: var(--text-color);
 }
 
-.profile-meta > * {
+/* 职位单行显示解决方案 */
+.profile-meta .position-line {
   display: block;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0.1rem 0; /* 最小化间距 */
+  font-size: 0.85rem;
+  margin: 0.15rem 0;
+  letter-spacing: -0.01em;
 }
 
-/* 强制学校名称单行 */
-.university {
-  font-weight: 400;
-  color: inherit !important;
+/* 学校名称去链接化 */
+.profile-meta .university {
+  color: var(--text-color) !important;
   text-decoration: none !important;
   cursor: text;
+  pointer-events: none;
+  display: block;
+  margin: 0.15rem 0;
 }
 
-/* ===== 正文区域 ===== */
-.main-content {
-  padding-left: 0;
-  font-size: 1.1rem; /* 增大正文字号 */
+.email {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 0.3rem;
 }
 
+/* ===== 内容区域 ===== */
 h2 {
-  font-size: 1.5rem;
-  font-weight: 600; /* 标题加粗 */
-  margin: 0.5rem 0 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin: 0 0 1rem;
+  padding: 0;
 }
 
 p {
-  margin-bottom: 1.2rem;
-  font-weight: 400; /* 确保不加粗 */
+  margin-bottom: 1.1rem;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* 移除所有分隔线 */
+hr {
+  display: none;
 }
 
 /* ===== 响应式设计 ===== */
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
   }
   
-  .profile-meta > * {
-    font-size: 0.85rem;
+  header {
+    position: static;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
   }
   
-  .main-content {
+  .profile-header {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .image.avatar img {
+    width: 130px;
+    height: 156px;
+  }
+  
+  section {
+    margin-left: 0;
+    width: 100%;
+    padding-left: 0;
+  }
+  
+  .profile-meta .position-line {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-meta .position-line {
+    font-size: 0.78rem;
+    transform: scale(0.95);
+    transform-origin: left;
+  }
+  
+  body {
     font-size: 1rem;
   }
 }
