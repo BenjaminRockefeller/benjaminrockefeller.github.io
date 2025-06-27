@@ -1,137 +1,92 @@
-/* ===== 国际学术风格重置 ===== */
+/* ===== 核心优化方案 ===== */
 :root {
-  --primary-color: #2c3e50; /* 学术蓝黑 */
-  --secondary-color: #3498db;
+  --primary-color: #2c3e50;
   --text-color: #333;
   --bg-color: #fefefe;
-  --card-bg: #fff;
   --border-color: #e0e0e0;
 }
 
-[data-theme="dark"] {
-  --primary-color: #ecf0f1;
-  --text-color: #f5f5f5;
-  --bg-color: #222;
-  --card-bg: #2d2d2d;
-}
-
 body {
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif; /* 国际学术常用字体 */
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   line-height: 1.7;
   color: var(--text-color);
   background-color: var(--bg-color);
 }
 
-/* ===== 哈佛/MIT式布局结构 ===== */
+/* ===== 精准对齐系统 ===== */
 .wrapper {
   display: flex;
   max-width: 1100px;
   margin: 0 auto;
-  padding-top: 0.5rem; /* 减少顶部空白 */
+  padding-top: 0; /* 完全去除顶部空白 */
 }
 
-/* ===== 左侧头像区 (参考Stanford样式) ===== */
 header {
   width: 220px;
   position: fixed;
-  padding-right: 1rem;
+  padding-top: 0; /* 关键：使头像顶部与内容对齐 */
 }
 
-.profile-header {
-  display: flex;
-  flex-direction: column;
+section {
+  margin-left: 240px;
+  padding-top: 0; /* 关键：上移内容区域 */
 }
 
-/* 长方形头像 (MIT标准比例) */
+/* ===== 头像样式优化 ===== */
 .image.avatar img {
-  width: 160px;  /* 国际标准学术肖像宽度 */
-  height: 200px; /* 经典2:2.5比例 */
+  width: 150px;
+  height: 180px; /* 适度长方形比例 */
   object-fit: cover;
-  object-position: top; /* 确保面部居中 */
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
-  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px; /* 圆角调整 */
+  margin-bottom: 0.8rem;
+  border: none; /* 移除边框 */
 }
 
-/* ===== 个人信息 (Caltech样式) ===== */
+/* ===== 个人信息排版 ===== */
 .profile-info h1 {
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.4rem; /* 适当缩小 */
   font-weight: 600;
-  color: var(--primary-color);
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
-  white-space: nowrap;
+  margin-bottom: 0.4rem;
 }
 
 .profile-meta {
-  font-size: 0.9rem; /* 14.4px */
-  line-height: 1.5;
-  color: var(--text-color);
+  font-size: 0.85rem; /* 缩小字号避免换行 */
+  line-height: 1.4;
 }
 
-.profile-meta p {
-  margin: 0.25rem 0;
+/* 强制单行显示 */
+.profile-meta p:nth-of-type(1) {
   white-space: nowrap;
+  margin-bottom: 0.3rem;
 }
 
 .email {
-  font-family: "Roboto Mono", monospace;
   font-size: 0.8rem;
 }
 
-/* ===== 右侧内容区 (参照Nature期刊样式) ===== */
+/* ===== 内容区域优化 ===== */
 section {
-  margin-left: 240px;
-  padding-left: 2rem;
-  width: calc(100% - 240px);
-  font-size: 1.1rem; /* 17.6px */
+  font-size: 1.05rem; /* 17px */
 }
 
-/* 标题对齐MIT风格 */
 h2 {
-  font-size: 1.5rem;
-  font-weight: 500; /* 学术风格中等加粗 */
-  color: var(--primary-color);
-  margin: 0.5rem 0 1rem;
-  padding-top: 0;
-  letter-spacing: -0.02em;
-}
-
-/* 牛津式段落排版 */
-p {
-  margin-bottom: 1.1rem;
-  text-align: justify;
-  font-weight: 400; /* 统一不加粗 */
-  hyphens: auto;
-  -webkit-hyphenate-limit-before: 3;
-  -webkit-hyphenate-limit-after: 2;
-}
-
-/* 强制取消所有加粗 */
-strong, b {
-  font-weight: 400 !important;
-  color: inherit;
-}
-
-/* ===== 社交图标 (剑桥大学样式) ===== */
-.social-icons {
-  margin: 1.2rem 0;
-  display: flex;
-  gap: 0.8rem;
-}
-
-.social-icons a {
   font-size: 1.3rem;
-  color: var(--primary-color);
-  transition: opacity 0.3s;
+  margin: 0 0 1rem; /* 上边距归零实现顶部对齐 */
+  padding: 0;
+  border: none !important; /* 移除所有边框 */
 }
 
-.social-icons a:hover {
-  opacity: 0.7;
+p {
+  margin-bottom: 1rem;
 }
 
-/* ===== 响应式设计 (参照Nature响应式) ===== */
+/* ===== 移除所有分隔线 ===== */
+hr {
+  display: none;
+}
+
+/* ===== 响应式设计 ===== */
 @media (max-width: 900px) {
   .wrapper {
     flex-direction: column;
@@ -140,39 +95,27 @@ strong, b {
   header {
     position: static;
     width: 100%;
-    padding-right: 0;
-    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
   
   .profile-header {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-  
-  .image.avatar img {
-    width: 120px;
-    height: 150px;
+    align-items: center;
+    text-align: center;
   }
   
   section {
     margin-left: 0;
     width: 100%;
-    padding-left: 0;
-  }
-}
-
-@media (max-width: 500px) {
-  .profile-header {
-    flex-direction: column;
   }
   
-  .image.avatar img {
-    width: 140px;
-    height: 175px;
-  }
-  
-  section {
-    font-size: 1rem;
+  /* 移动端保持单行 */
+  .profile-meta p:nth-of-type(1) {
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
