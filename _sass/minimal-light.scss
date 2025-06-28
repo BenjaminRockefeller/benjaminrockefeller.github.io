@@ -218,3 +218,30 @@ p {
 .profile-text .email a:hover {
   text-decoration: underline;
 }
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+header position,
+header .university {
+  display: block;
+  font-size: 1rem;
+  color: #444;
+}
+
+header email {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+header email a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+header email a:hover {
+  text-decoration: underline;
+}
+
