@@ -21,11 +21,13 @@
   box-sizing: border-box;
 }
 
+
 body {
   font-family: "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: 1.2rem;
-  line-height: 1.4;  /* ⬅️ 重新缩小行距 */
+  line-height: 1.4;
+  letter-spacing: 0.01em;   /* ✅ 微调字距，适配Times，不拥挤 */
   color: var(--text-color);
   background-color: var(--bg-color);
 }
@@ -49,13 +51,14 @@ header {
   text-align: left;
 }
 
+/* ② 正文右移 */
 section {
-  margin-left: 190px;         /* 与 header 宽度相协调 */
-  padding-left: 1.3rem;
-  width: calc(100% - 190px);
+  margin-left: 210px;
+  padding-left: 1.8rem;
+  padding-top: 2rem;
+  max-width: 800px;
   font-size: 1.2rem;
   line-height: 1.4;
-  max-width: 800px;
 }
 
 
@@ -71,20 +74,24 @@ section {
 
 /* ===== 个人信息 ===== */
 .profile-info h1 {
-  font-size: 1.1rem;     /* ⬅️ 明确减小名字字号 */
+  font-size: 1.05rem !important;  /* ✅ 更小字号，确保生效 */
   font-weight: 600;
   color: var(--primary-color);
-  margin-bottom: 0.4rem;
-  line-height: 1.3;
+  margin-bottom: 0.3rem;
+  line-height: 1.25;              /* ✅ 行距收紧，避免三行撑开过大 */
   text-align: left;
+  letter-spacing: -0.01em;        /* ✅ 字距微调，更紧凑 */
 }
+
 
 .profile-meta {
   font-size: 0.9rem;
   line-height: 1.4;
+  letter-spacing: 0.01em;   /* ✅ 与正文保持一致美感 */
   color: var(--text-color);
   text-align: left;
 }
+
 
 /* 单行显示规则 */
 .profile-meta .position-line {
@@ -120,12 +127,14 @@ h2 {
   font-weight: 600;
   color: var(--primary-color);
   margin: 2rem 0 1rem;
+  line-height: 1.3;  /* ✅ 新增，让 Times 字体不显得太拥挤 */
   border-bottom: 1px solid #ccc;
 }
 
+
 p {
-  margin-bottom: 1.2rem;
-  line-height: 1.4;   /* ⬅️ 调整正文段落行距 */
+  margin-bottom: 1.4rem;   /* ✅ 从 1.2rem → 1.4rem，避免正文压迫感 */
+  line-height: 1.45;
   text-align: justify;
   hyphens: auto;
 }
