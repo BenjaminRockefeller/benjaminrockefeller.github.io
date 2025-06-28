@@ -56,6 +56,28 @@ header {
 }
 
 /* ===== 个人信息块 ===== */
+/* 让头像与文字水平排列 */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* 让头像和文字之间留点间距 */
+.image.avatar {
+  margin-right: 1rem;
+}
+
+/* 控制 info 宽度，防止太窄换行 */
+.profile-info {
+  flex: 1; /* 撑满剩余宽度 */
+  max-width: calc(100% - 150px - 1rem); /* 减去头像宽度和间距 */
+  line-height: 1.6;
+  font-size: 1.2rem;
+  word-break: break-word;
+  white-space: normal;
+}
+
 .profile-info {
   margin-top: 1rem;
   line-height: 1.6;
