@@ -191,11 +191,10 @@ p {
 .profile {
   display: flex;
   align-items: flex-start;
-  gap: 3rem;
-  margin-bottom: 2rem;
+  gap: 3rem; /* ✅ 增加左右间距 */
+  margin: 2rem auto;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 2rem;
 }
 
 .profile-pic {
@@ -203,32 +202,33 @@ p {
   height: 160px;
   object-fit: cover;
   border-radius: 16px;
+  flex-shrink: 0; /* ✅ 防止被挤压变形 */
 }
 
 .profile-info {
   flex: 1;
-  max-width: 880px; /* ✅ 从700提升到880，标准学术排版 */
   font-family: "Times New Roman", serif;
   font-size: 1.2rem;
   line-height: 1.6;
-  word-break: break-word;
   color: #111;
+  min-width: 0; /* ✅ 防止溢出换行异常 */
+  padding-left: 1rem; /* ✅ 防止贴边 */
 }
 
 .profile-info h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 0.6rem;
-  line-height: 1.3;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
   text-align: left;
   font-family: "Times New Roman", serif;
 }
 
 .profile-info p {
-  margin: 0.3rem 0;
+  margin: 0.5rem 0;
   font-size: 1.15rem;
   line-height: 1.6;
 }
+
 
 section {
   max-width: 1200px;
