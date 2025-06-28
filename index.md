@@ -9,7 +9,7 @@ To realize that vision, reliability must come first. My initial focus is address
 If each of us has one mission in life, then mine is clear: to devote my life to building the future of AI.
 
 ---
-## Research Interests | Building a Hallucination-Resistant Architecture for Large Language Models
+## Research Interests | Building a Hallucination-Resistant Architecture for LLMs
 While large language models (LLMs) have made significant strides in generating fluent text, hallucination remains a critical issue in high-stakes applications—where the absence of factual grounding, logical inconsistencies, and unverifiable outputs undermine reliability. This exposes fundamental flaws in inference control, cognitive feedback, and knowledge alignment.
 
 To address this challenge, I propose a three-tiered, progressive hallucination-resistant framework, centered around a Planning-Reflection-Evidence feedback loop, focusing on the following three key components: SFPL(Structured Feedback Planning Layer): By implementing pre-generation reasoning plans, we replace free-form generation with precise control over the initial steps, mitigating generation bias; **REFLEXION**: This introduces recursive self-feedback and cognitive evaluation, enabling dynamic correction of cognitive errors during the generation process; CAT(Citation-Aware Generation): This facilitates word-level fact referencing, ensuring the generated content is bound to external knowledge, thus enhancing verifiability.
