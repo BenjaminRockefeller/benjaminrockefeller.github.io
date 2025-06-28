@@ -56,13 +56,16 @@ header {
 }
 
 /* ===== 个人信息块 ===== */
+/* Profile文字内容部分 */
 .profile-info {
-  margin-top: 1rem;
+  flex: 1;
+  font-family: "Times New Roman", serif;
+  font-size: 1.2rem;
   line-height: 1.6;
-  font-size: 1.05rem;
-  text-align: left;
   word-break: break-word;
+  max-width: 850px;    /* ✅ 原为 700，你可根据屏幕调整 */
 }
+
 
 .profile-info h1 {
   font-size: 1.3rem !important;
@@ -130,10 +133,12 @@ p {
     text-align: center;
   }
 
-  .image.avatar img {
-    width: 130px;
-    height: 156px;
-  }
+/* 头像固定宽度 */
+.image.avatar {
+  width: 150px;
+  height: auto;
+  flex-shrink: 0;
+}
 
   section {
     margin-left: 0;
@@ -158,3 +163,10 @@ p {
     font-size: 1rem;
   }
 }
+.profile {
+  display: flex;
+  align-items: flex-start;   /* 让头像与文字顶部对齐 */
+  gap: 2rem;                 /* 头像与 About Me 文字之间的距离 */
+  margin-bottom: 2rem;
+}
+
