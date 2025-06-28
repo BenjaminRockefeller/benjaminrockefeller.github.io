@@ -23,15 +23,14 @@
 
 /* ===== 字体与基础设置 ===== */
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif !important;
   font-weight: 400;
   font-size: 1.2rem;
-  line-height: 1.4;
+  line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-color);
 }
 
-/* 确保所有左栏信息统一字体 */
 header,
 header * {
   font-family: "Times New Roman", Times, serif !important;
@@ -57,36 +56,45 @@ header {
 }
 
 /* ===== 个人信息块 ===== */
+.profile-info {
+  margin-top: 1rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  text-align: left;
+  word-break: break-word;
+}
+
 .profile-info h1 {
-  font-size: 1.05rem !important;
-  font-weight: 600;
-  line-height: 1.25;
-  margin-bottom: 0.3rem;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
   color: var(--primary-color);
   text-align: left;
   letter-spacing: -0.01em;
 }
 
 .profile-meta {
-  font-size: 0.9rem !important;
-  line-height: 1.4;
+  font-size: 1.05rem !important;
+  line-height: 1.6;
   text-align: left;
+  word-break: break-word;
 }
 
 .profile-meta .position-line,
 .profile-meta .university,
 .email {
-  font-size: 0.9rem !important;
-  white-space: nowrap;
+  font-size: 1.05rem !important;
+  white-space: normal;
   letter-spacing: -0.01em;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 .email {
   font-family: "Roboto Mono", monospace;
-  font-size: 0.8rem;
+  font-size: 1rem !important;
   margin-top: 0.3rem;
+  word-break: break-all;
 }
 
 /* ===== 主体内容区调整（右栏） ===== */
@@ -94,22 +102,21 @@ section {
   margin-left: 210px;
   padding-left: 1.2rem;
   padding-right: 1rem;
-  padding-top: 4.5rem;  /* ⬅️从3.5rem调高到4.5rem，让“About Me”与头像齐平 */
+  padding-top: 4.5rem;
   max-width: 950px;
   font-size: 1.2rem;
-  line-height: 1.4;
+  line-height: 1.6;
 }
-
 
 /* ===== 段落正文优化 ===== */
 p {
   margin-bottom: 1.2rem;
-  line-height: 1.4;
+  line-height: 1.6;
   text-align: justify;
   hyphens: auto;
 }
 
-/* ===== 小屏响应式调整（可选） ===== */
+/* ===== 小屏响应式调整 ===== */
 @media (max-width: 900px) {
   .wrapper {
     flex-direction: column;
@@ -136,13 +143,13 @@ p {
   }
 
   .profile-meta .position-line {
-    font-size: 0.82rem;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
   .profile-meta .position-line {
-    font-size: 0.78rem;
+    font-size: 0.9rem;
     transform: scale(0.95);
     transform-origin: left;
   }
