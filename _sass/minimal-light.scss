@@ -31,28 +31,33 @@ body {
 }
 
 /* ===== 主布局结构 ===== */
+
 .wrapper {
   display: flex;
+  align-items: flex-start;     /* ⬅️ 主区块垂直顶部对齐 */
   max-width: 1100px;
   margin: 0 auto;
   padding-top: 0;
 }
 
 header {
-  width: 200px;            /* ⬅️ 缩小header宽度 */
+  width: 200px;
   position: fixed;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   text-align: left;
+  top: 0;                       /* 确保固定时从顶部开始 */
 }
 
 section {
-  margin-left: 180px;       /* ⬅️ 再次向左移正文区 */
+  margin-left: 190px;           /* 保持适中 */
   padding-left: 1rem;
-  width: calc(100% - 180px);
+  padding-top: 0;               /* ⬅️ 消除额外顶部间距 */
+  width: calc(100% - 190px);
   font-size: 1.2rem;
   max-width: 800px;
 }
+
 
 /* ===== 头像区域 ===== */
 .image.avatar img {
