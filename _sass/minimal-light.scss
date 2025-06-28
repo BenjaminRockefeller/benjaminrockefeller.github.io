@@ -187,3 +187,34 @@ p {
     font-size: 1rem;
   }
 }
+/* === Custom Profile Text Styling === */
+.profile-text {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.profile-text .name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.profile-text .position {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.profile-text .email {
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+.profile-text .email a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.profile-text .email a:hover {
+  text-decoration: underline;
+}
