@@ -45,16 +45,16 @@ header {
   position: fixed;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  margin-top: 2.2rem;   /* ✅ 向下调头像，精确对齐右侧标题 */
   text-align: left;
-  top: 0;                       /* 确保固定时从顶部开始 */
 }
 
 section {
-  margin-left: 190px;           /* 保持适中 */
-  padding-left: 1rem;
-  padding-top: 0;               /* ⬅️ 消除额外顶部间距 */
+  margin-left: 190px;         /* 与 header 宽度相协调 */
+  padding-left: 1.3rem;
   width: calc(100% - 190px);
   font-size: 1.2rem;
+  line-height: 1.4;
   max-width: 800px;
 }
 
