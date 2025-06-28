@@ -165,8 +165,10 @@ p {
 }
 .profile {
   display: flex;
-  align-items: flex-start;   /* 让头像与文字顶部对齐 */
-  gap: 2rem;                 /* 头像与 About Me 文字之间的距离 */
+  align-items: flex-start;
+  gap: 2rem;
   margin-bottom: 2rem;
+  max-width: 1200px;    /* ✅ 增加整体并排容器的最大宽度 */
 }
+
 
