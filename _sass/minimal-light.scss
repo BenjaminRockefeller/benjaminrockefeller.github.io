@@ -115,7 +115,8 @@ h2 {
 }
 
 p {
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.3rem;
+  line-height: 1.5;        /* 已设置就保留 */
   text-align: justify;
   hyphens: auto;
 }
