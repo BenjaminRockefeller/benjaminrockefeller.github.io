@@ -21,48 +21,32 @@
   box-sizing: border-box;
 }
 
-
+/* ===== 字体与基础设置 ===== */
 body {
   font-family: "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.4;
-  letter-spacing: 0.01em;   /* ✅ 微调字距，适配Times，不拥挤 */
   color: var(--text-color);
   background-color: var(--bg-color);
 }
 
-/* ===== 主布局结构 ===== */
-
-.wrapper {
-  display: flex;
-  align-items: flex-start;     /* ⬅️ 主区块垂直顶部对齐 */
-  max-width: 1100px;
-  margin: 0 auto;
-  padding-top: 0;
+/* 确保所有左栏信息统一字体 */
+header,
+header * {
+  font-family: "Times New Roman", Times, serif !important;
 }
 
+/* ===== 左侧头像栏 ===== */
 header {
   width: 200px;
   position: fixed;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  margin-top: 2.2rem;   /* ✅ 向下调头像，精确对齐右侧标题 */
+  margin-top: 2.2rem;
   text-align: left;
 }
 
-/* ② 正文右移 */
-section {
-  margin-left: 210px;
-  padding-left: 1.8rem;
-  padding-top: 2rem;
-  max-width: 800px;
-  font-size: 1.2rem;
-  line-height: 1.4;
-}
-
-
-/* ===== 头像区域 ===== */
 .image.avatar img {
   width: 150px;
   height: 180px;
@@ -72,44 +56,29 @@ section {
   margin-left: 0;
 }
 
-/* ===== 个人信息 ===== */
+/* ===== 个人信息块 ===== */
 .profile-info h1 {
-  font-size: 1.05rem !important;  /* ✅ 更小字号，确保生效 */
+  font-size: 1.05rem !important;
   font-weight: 600;
-  color: var(--primary-color);
+  line-height: 1.25;
   margin-bottom: 0.3rem;
-  line-height: 1.25;              /* ✅ 行距收紧，避免三行撑开过大 */
+  color: var(--primary-color);
   text-align: left;
-  letter-spacing: -0.01em;        /* ✅ 字距微调，更紧凑 */
-}
-
-
-.profile-meta {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  letter-spacing: 0.01em;   /* ✅ 与正文保持一致美感 */
-  color: var(--text-color);
-  text-align: left;
-}
-
-
-/* 单行显示规则 */
-.profile-meta .position-line {
-  display: block;
-  white-space: nowrap;
-  font-size: 0.85rem;
-  margin: 0.15rem 0;
   letter-spacing: -0.01em;
 }
 
-.profile-meta .university {
-  color: var(--text-color) !important;
-  text-decoration: none !important;
-  cursor: text;
-  pointer-events: none;
-  display: block;
-  margin: 0.15rem 0;
+.profile-meta {
+  font-size: 0.9rem !important;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.profile-meta .position-line,
+.profile-meta .university,
+.email {
+  font-size: 0.9rem !important;
   white-space: nowrap;
+  letter-spacing: -0.01em;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -117,34 +86,29 @@ section {
 .email {
   font-family: "Roboto Mono", monospace;
   font-size: 0.8rem;
-  display: block;
   margin-top: 0.3rem;
 }
 
-/* ===== 内容标题与段落样式 ===== */
-h2 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin: 2rem 0 1rem;
-  line-height: 1.3;  /* ✅ 新增，让 Times 字体不显得太拥挤 */
-  border-bottom: 1px solid #ccc;
+/* ===== 主体内容区调整（右栏） ===== */
+section {
+  margin-left: 210px;
+  padding-left: 1.2rem;
+  padding-right: 1rem;
+  padding-top: 3.5rem;         /* ⬅️ 与头像对齐 */
+  max-width: 950px;            /* ⬅️ 增大行宽限制 */
+  font-size: 1.2rem;
+  line-height: 1.4;
 }
 
-
+/* ===== 段落正文优化 ===== */
 p {
-  margin-bottom: 1.4rem;   /* ✅ 从 1.2rem → 1.4rem，避免正文压迫感 */
-  line-height: 1.45;
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
   text-align: justify;
   hyphens: auto;
 }
 
-/* 分隔线 */
-hr {
-  display: none;
-}
-
-/* ===== 响应式设计 ===== */
+/* ===== 小屏响应式调整（可选） ===== */
 @media (max-width: 900px) {
   .wrapper {
     flex-direction: column;
