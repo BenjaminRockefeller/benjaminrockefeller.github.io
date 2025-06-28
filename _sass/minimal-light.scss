@@ -25,7 +25,7 @@ body {
   font-family: "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: 1.2rem;
-  line-height: 1.4;
+  line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-color);
 }
@@ -41,16 +41,18 @@ body {
 header {
   width: 220px;
   position: fixed;
+  padding-left: 0.8rem;
   padding-right: 1rem;
+  text-align: left;
 }
 
 section {
-  margin-left: 190px;        /* 原值240px，向左靠近头像 */
-  padding-left: 1.3rem;        /* 原值2rem，减少空隙 */
-  width: calc(100% - 200px); /* 与 margin 匹配 */
+  margin-left: 180px;
+  padding-left: 1rem;
+  width: calc(100% - 180px);
   font-size: 1.25rem;
+  max-width: 800px;
 }
-
 
 /* ===== 头像区域 ===== */
 .image.avatar img {
@@ -59,20 +61,24 @@ section {
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 0.8rem;
+  margin-left: 0;  /* 靠左对齐 */
 }
 
 /* ===== 个人信息 ===== */
 .profile-info h1 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;     /* 调小字体 */
   font-weight: 600;
   color: var(--primary-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+  text-align: left;
 }
 
 .profile-meta {
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--text-color);
+  text-align: left;
 }
 
 /* 职位单行显示解决方案 */
@@ -92,11 +98,10 @@ section {
   pointer-events: none;
   display: block;
   margin: 0.15rem 0;
-  white-space: nowrap; /* 确保单行显示 */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 .email {
   font-family: "Roboto Mono", monospace;
@@ -107,16 +112,16 @@ section {
 
 /* ===== 内容区域 ===== */
 h2 {
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: var(--primary-color);
-  margin: 0 0 1rem;
-  padding: 0;
+  margin: 2rem 0 1rem;
+  border-bottom: 1px solid #ccc;
 }
 
 p {
   margin-bottom: 1.3rem;
-  line-height: 1.5;        /* 已设置就保留 */
+  line-height: 1.6;
   text-align: justify;
   hyphens: auto;
 }
@@ -131,32 +136,32 @@ hr {
   .wrapper {
     flex-direction: column;
   }
-  
+
   header {
     position: static;
     width: 100%;
-    padding-right: 0;
+    padding: 0;
     margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: center;
+    text-align: center;
   }
-  
+
   .profile-header {
     align-items: center;
     text-align: center;
   }
-  
+
   .image.avatar img {
     width: 130px;
     height: 156px;
   }
-  
+
   section {
     margin-left: 0;
     width: 100%;
     padding-left: 0;
+    max-width: 100%;
   }
-  
+
   .profile-meta .position-line {
     font-size: 0.82rem;
   }
@@ -168,7 +173,7 @@ hr {
     transform: scale(0.95);
     transform-origin: left;
   }
-  
+
   body {
     font-size: 1rem;
   }
