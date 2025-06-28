@@ -94,11 +94,12 @@ section {
   margin-left: 210px;
   padding-left: 1.2rem;
   padding-right: 1rem;
-  padding-top: 3.5rem;         /* ⬅️ 与头像对齐 */
-  max-width: 950px;            /* ⬅️ 增大行宽限制 */
+  padding-top: 4.5rem;  /* ⬅️从3.5rem调高到4.5rem，让“About Me”与头像齐平 */
+  max-width: 950px;
   font-size: 1.2rem;
   line-height: 1.4;
 }
+
 
 /* ===== 段落正文优化 ===== */
 p {
