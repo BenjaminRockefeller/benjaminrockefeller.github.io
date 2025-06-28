@@ -25,7 +25,7 @@ body {
   font-family: "Times New Roman", Times, serif;
   font-weight: 400;
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.4;  /* ⬅️ 重新缩小行距 */
   color: var(--text-color);
   background-color: var(--bg-color);
 }
@@ -39,18 +39,18 @@ body {
 }
 
 header {
-  width: 220px;
+  width: 200px;            /* ⬅️ 缩小header宽度 */
   position: fixed;
-  padding-left: 0.8rem;
-  padding-right: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   text-align: left;
 }
 
 section {
-  margin-left: 180px;
+  margin-left: 180px;       /* ⬅️ 再次向左移正文区 */
   padding-left: 1rem;
   width: calc(100% - 180px);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   max-width: 800px;
 }
 
@@ -61,12 +61,12 @@ section {
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 0.8rem;
-  margin-left: 0;  /* 靠左对齐 */
+  margin-left: 0;
 }
 
 /* ===== 个人信息 ===== */
 .profile-info h1 {
-  font-size: 1.25rem;     /* 调小字体 */
+  font-size: 1.1rem;     /* ⬅️ 明确减小名字字号 */
   font-weight: 600;
   color: var(--primary-color);
   margin-bottom: 0.4rem;
@@ -76,12 +76,12 @@ section {
 
 .profile-meta {
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.4;
   color: var(--text-color);
   text-align: left;
 }
 
-/* 职位单行显示解决方案 */
+/* 单行显示规则 */
 .profile-meta .position-line {
   display: block;
   white-space: nowrap;
@@ -90,7 +90,6 @@ section {
   letter-spacing: -0.01em;
 }
 
-/* 学校名称去链接化 */
 .profile-meta .university {
   color: var(--text-color) !important;
   text-decoration: none !important;
@@ -110,9 +109,9 @@ section {
   margin-top: 0.3rem;
 }
 
-/* ===== 内容区域 ===== */
+/* ===== 内容标题与段落样式 ===== */
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--primary-color);
   margin: 2rem 0 1rem;
@@ -120,13 +119,13 @@ h2 {
 }
 
 p {
-  margin-bottom: 1.3rem;
-  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  line-height: 1.4;   /* ⬅️ 调整正文段落行距 */
   text-align: justify;
   hyphens: auto;
 }
 
-/* 移除所有分隔线 */
+/* 分隔线 */
 hr {
   display: none;
 }
@@ -142,11 +141,6 @@ hr {
     width: 100%;
     padding: 0;
     margin-bottom: 1.5rem;
-    text-align: center;
-  }
-
-  .profile-header {
-    align-items: center;
     text-align: center;
   }
 
