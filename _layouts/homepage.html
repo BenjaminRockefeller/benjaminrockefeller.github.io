@@ -40,11 +40,11 @@
       <!-- 导航栏开始 -->
       <nav>
         <ul class="navbar">
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#working-papers">Working Papers</a></li>
-          <li><a href="#idea-lab">Idea Lab</a></li>
-          <li><a href="#content">Content</a></li>
+          <li><a href="{{ '/about' | relative_url }}">About Me</a></li>  <!-- 跳转到 about.md -->
+          <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>  <!-- 跳转到 projects.md -->
+          <li><a href="{{ '/working-papers' | relative_url }}">Working Papers</a></li>  <!-- 跳转到 working-papers.md -->
+          <li><a href="{{ '/idea-lab' | relative_url }}">Idea Lab</a></li>  <!-- 跳转到 idea-lab.md -->
+          <li><a href="{{ '/content' | relative_url }}">Content</a></li>  <!-- 跳转到 content.md -->
         </ul>
       </nav>
       <!-- 导航栏结束 -->
@@ -103,27 +103,27 @@
       <!-- 页面内容部分 -->
       <section id="about">
         <h2>About Me</h2>
-        <!-- 你的关于我部分内容 -->
+        <p>这里是关于我的内容...</p>
       </section>
 
       <section id="projects">
         <h2>Projects</h2>
-        <!-- 你的项目内容 -->
+        <p>这里是项目的详细内容...</p>
       </section>
 
       <section id="working-papers">
         <h2>Working Papers</h2>
-        <!-- 你的工作论文内容 -->
+        <p>这里是工作论文内容...</p>
       </section>
 
       <section id="idea-lab">
         <h2>Idea Lab</h2>
-        <!-- 你的创意实验室内容 -->
+        <p>这里是创意实验室内容...</p>
       </section>
 
       <section id="content">
         <h2>Content</h2>
-        <!-- 你的内容部分 -->
+        <p>这里是内容部分...</p>
       </section>
 
       <section>
@@ -148,7 +148,7 @@
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', '{{ site.google_analytics }}', 'auto');
       ga('send', 'pageview');
     </script>
