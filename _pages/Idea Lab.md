@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: page
 title: Idea Lab
+permalink: /idea-lab/
 ---
 
-## Idea Lab
+# Idea Lab
 
-展示你的创意实验室的内容，创意项目等。
+Exploratory ideas, prototypes, and speculative concepts for the next generation of intelligent systems.
