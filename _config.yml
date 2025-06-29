@@ -30,3 +30,11 @@ plugins:
 exclude:
   - Gemfile
   - README.md
+
+# ===== 页面导航栏 =====
+header_pages:
+  - index.md
+  - projects.md
+  - working-papers.md
+  - idea-lab.md
+  - content.md
