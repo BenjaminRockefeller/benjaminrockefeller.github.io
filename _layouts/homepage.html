@@ -36,6 +36,13 @@
     
     <!-- 新增导航栏样式 -->
     <style>
+      /* 全局调整 */
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      
       /* 导航栏整体样式 */
       .main-nav {
         background: linear-gradient(135deg, #1a2a6c, #2a4a7c);
@@ -44,6 +51,7 @@
         top: 0;
         z-index: 1000;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-top: 0 !important;
       }
       
       .nav-container {
@@ -120,12 +128,32 @@
         }
       }
       
+      /* 布局调整 - 使右边框与导航条右侧对齐 */
+      .wrapper {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      header {
+        flex: 0 0 300px;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      
+      section {
+        flex: 1;
+        min-width: 300px;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      
       /* 内容区样式增强 */
       .content-section {
         display: none;
         padding: 40px 20px;
-        max-width: 1000px;
-        margin: 30px auto;
         background: white;
         border-radius: 12px;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
@@ -169,33 +197,38 @@
 
   <body>
 
-    <div class="wrapper">
-      <!-- 全新设计的导航栏 -->
-      <nav class="main-nav">
-        <div class="nav-container">
-          <div class="nav-item active" data-target="projects">
-            <a href="#projects" class="nav-link">
-              <i class="fas fa-project-diagram"></i>Projects
-            </a>
-          </div>
-          <div class="nav-item" data-target="working-papers">
-            <a href="#working-papers" class="nav-link">
-              <i class="fas fa-file-alt"></i>Working Papers
-            </a>
-          </div>
-          <div class="nav-item" data-target="idea-lab">
-            <a href="#idea-lab" class="nav-link">
-              <i class="fas fa-lightbulb"></i>Idea Lab
-            </a>
-          </div>
-          <div class="nav-item" data-target="content">
-            <a href="#content" class="nav-link">
-              <i class="fas fa-book"></i>Content
-            </a>
-          </div>
+    <!-- 全新设计的导航栏 -->
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="nav-item active" data-target="about">
+          <a href="#about" class="nav-link">
+            <i class="fas fa-user"></i>About
+          </a>
         </div>
-      </nav>
+        <div class="nav-item" data-target="projects">
+          <a href="#projects" class="nav-link">
+            <i class="fas fa-project-diagram"></i>Projects
+          </a>
+        </div>
+        <div class="nav-item" data-target="working-papers">
+          <a href="#working-papers" class="nav-link">
+            <i class="fas fa-file-alt"></i>Working Papers
+          </a>
+        </div>
+        <div class="nav-item" data-target="idea-lab">
+          <a href="#idea-lab" class="nav-link">
+            <i class="fas fa-lightbulb"></i>Idea Lab
+          </a>
+        </div>
+        <div class="nav-item" data-target="content">
+          <a href="#content" class="nav-link">
+            <i class="fas fa-book"></i>Content
+          </a>
+        </div>
+      </div>
+    </nav>
 
+    <div class="wrapper">
       <header>
         {% if site.avatar %}
         <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" /></a>
@@ -248,8 +281,30 @@
       </header>
       
       <section>
-        <!-- 内容区域 -->
-        <div id="projects" class="content-section active">
+        <!-- 关于我内容区域 -->
+        <div id="about" class="content-section active">
+          <h2 class="section-title">About Me</h2>
+          <p>In my darkest hour, AI lit the way—showing me how once-impossible ideas could take shape, and revealing its greatest power: helping us make better decisions amid complexity and uncertainty. That moment changed how I see the world—and what I believe AI should really be about.</p>
+          
+          <p>To realize that vision, reliability must come first. My initial focus is addressing hallucinations—those moments when AI speaks with confidence but delivers falsehoods. I'm working on tools that help people make smarter decisions—in law, finance, and other fields where mistakes can be costly. My long-term goal is far more ambitious: I want AI to move beyond linear generation—to reason, adapt, and connect ideas across complex contexts, until it can truly think, not just generate.</p>
+          
+          <p>If each of us has one mission in life, then mine is clear: to devote my life to building the future of AI.</p>
+          
+          <div class="research-highlight">
+            <h3>Research Interests | Building a Hallucination-Resistant Architecture for LLMs</h3>
+            <p>While large language models (LLMs) have made significant strides in generating fluent text, hallucination remains a critical issue in high-stakes applications—where the absence of factual grounding, logical inconsistencies, and unverifiable outputs undermine reliability. This exposes fundamental flaws in inference control, cognitive feedback, and knowledge alignment.</p>
+            
+            <p>To address this challenge, I propose a three-tiered, progressive hallucination-resistant framework, centered around a Planning-Reflection-Evidence feedback loop, focusing on the following three key components:</p>
+            <ul>
+              <li><strong>SFPL (Structured Feedback Planning Layer)</strong>: By implementing pre-generation reasoning plans, we replace free-form generation with precise control over the initial steps, mitigating generation bias</li>
+              <li><strong>REFLEXION</strong>: This introduces recursive self-feedback and cognitive evaluation, enabling dynamic correction of cognitive errors during the generation process</li>
+              <li><strong>CAT (Citation-Aware Transformer)</strong>: Integrating verifiable sources directly into the reasoning process to ensure factual grounding</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- 项目内容区域 -->
+        <div id="projects" class="content-section">
           <h2 class="section-title">Projects</h2>
           <p>Here you'll find my current and past AI research projects with a focus on hallucination-resistant architectures.</p>
           <div class="project-highlight">
@@ -332,6 +387,9 @@
               section.classList.remove('active');
               if (section.id === target) {
                 section.classList.add('active');
+                
+                // 滚动到内容区域顶部
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }
             });
             
