@@ -42,13 +42,12 @@
     <div class="wrapper">
       <!-- 导航栏开始 -->
       <nav>
-        <ul class="navbar">
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#working-papers">Working Papers</a></li>
-          <li><a href="#idea-lab">Idea Lab</a></li>
-          <li><a href="#content">Content</a></li>
-        </ul>
-      </nav>
+       <a href="{{ '/projects/' | relative_url }}">Projects</a>
+       <a href="{{ '/working-papers/' | relative_url }}">Working Papers</a>
+       <a href="{{ '/idea-lab/' | relative_url }}">Idea Lab</a>
+       <a href="{{ '/content/' | relative_url }}">Content</a>
+     </nav>
+
       <!-- 导航栏结束 -->
       <header>
         {% if site.avatar %}
