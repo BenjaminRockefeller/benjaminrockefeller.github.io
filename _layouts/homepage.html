@@ -38,15 +38,31 @@
   <body>
     <div class="wrapper">
       <!-- 导航栏开始 -->
-      <nav>
-        <ul class="navbar">
-          <li><a href="{{ '/about' | relative_url }}">About Me</a></li>  <!-- 跳转到 about.md -->
-          <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>  <!-- 跳转到 projects.md -->
-          <li><a href="{{ '/working-papers' | relative_url }}">Working Papers</a></li>  <!-- 跳转到 working-papers.md -->
-          <li><a href="{{ '/idea-lab' | relative_url }}">Idea Lab</a></li>  <!-- 跳转到 idea-lab.md -->
-          <li><a href="{{ '/content' | relative_url }}">Content</a></li>  <!-- 跳转到 content.md -->
-        </ul>
-      </nav>
+<!-- 导航栏 -->
+<nav>
+  <ul class="navbar">
+    <li><a href="{{ '/about' | relative_url }}">About Me</a></li>
+    <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
+    <li><a href="{{ '/working-papers' | relative_url }}">Working Papers</a></li>
+    <li><a href="{{ '/idea-lab' | relative_url }}">Idea Lab</a></li>
+    <li><a href="{{ '/content' | relative_url }}">Content</a></li>
+  </ul>
+</nav>
+
+<!-- 页面内容 -->
+<section id="about">
+  <h2>About Me</h2>
+  {{ content }}
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  {{ content }}
+</section>
+
+<!-- 在 _layouts/default.html 中确保使用 {{ content }} 来渲染页面内容 -->
+
+
       <!-- 导航栏结束 -->
       
       <header>
