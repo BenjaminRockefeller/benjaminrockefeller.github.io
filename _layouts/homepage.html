@@ -41,6 +41,8 @@
         margin: 0;
         padding: 0;
         overflow-x: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
       }
       
       /* 导航栏整体样式 */
@@ -141,6 +143,9 @@
         flex: 0 0 300px;
         padding: 20px;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       
       section {
@@ -150,18 +155,23 @@
         box-sizing: border-box;
       }
       
+      /* 头像与内容顶部对齐 */
+      .image.avatar {
+        margin-top: 0;
+      }
+      
       /* 内容区样式增强 */
       .content-section {
         display: none;
-        padding: 40px 20px;
+        padding: 40px;
         background: white;
         border-radius: 12px;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        animation: fadeIn 0.5s ease;
       }
       
       .content-section.active {
         display: block;
-        animation: fadeIn 0.5s ease;
       }
       
       @keyframes fadeIn {
@@ -169,16 +179,70 @@
         to { opacity: 1; transform: translateY(0); }
       }
       
-      .section-title {
-        color: #1a2a6c;
-        border-bottom: 2px solid #4CAF50;
-        padding-bottom: 12px;
-        margin-bottom: 30px;
-        font-size: 2rem;
+      /* 卡片式布局 */
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+      }
+      
+      .project-card, .paper-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid #eaeaea;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      
+      .project-card:hover, .paper-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+      
+      .card-header {
+        padding: 20px;
+        background: linear-gradient(135deg, #1a2a6c, #2a4a7c);
+        color: white;
+      }
+      
+      .card-body {
+        padding: 20px;
+        flex-grow: 1;
+      }
+      
+      .card-footer {
+        padding: 15px 20px;
+        background: #f8f9fa;
+        border-top: 1px solid #eee;
+      }
+      
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #1a2a6c;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+      
+      .btn:hover {
+        background: #2a4a7c;
+        transform: translateY(-2px);
       }
       
       /* 深色模式适配 */
       @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #121212;
+        }
+        
         .main-nav {
           background: linear-gradient(135deg, #0d1b2a, #1b263b);
         }
@@ -186,10 +250,25 @@
         .content-section {
           background: #1e293b;
           box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+          color: #e2e8f0;
         }
         
-        .section-title {
-          color: #e2e8f0;
+        .project-card, .paper-card {
+          background: #1e293b;
+          border: 1px solid #2d3748;
+        }
+        
+        .card-header {
+          background: linear-gradient(135deg, #0d1b2a, #1b263b);
+        }
+        
+        .card-footer {
+          background: #1a202c;
+          border-top: 1px solid #2d3748;
+        }
+        
+        .btn {
+          background: #2a4a7c;
         }
       }
     </style>
@@ -283,7 +362,6 @@
       <section>
         <!-- 关于我内容区域 -->
         <div id="about" class="content-section active">
-          <h2 class="section-title">About Me</h2>
           <p>In my darkest hour, AI lit the way—showing me how once-impossible ideas could take shape, and revealing its greatest power: helping us make better decisions amid complexity and uncertainty. That moment changed how I see the world—and what I believe AI should really be about.</p>
           
           <p>To realize that vision, reliability must come first. My initial focus is addressing hallucinations—those moments when AI speaks with confidence but delivers falsehoods. I'm working on tools that help people make smarter decisions—in law, finance, and other fields where mistakes can be costly. My long-term goal is far more ambitious: I want AI to move beyond linear generation—to reason, adapt, and connect ideas across complex contexts, until it can truly think, not just generate.</p>
@@ -300,55 +378,208 @@
               <li><strong>REFLEXION</strong>: This introduces recursive self-feedback and cognitive evaluation, enabling dynamic correction of cognitive errors during the generation process</li>
               <li><strong>CAT (Citation-Aware Transformer)</strong>: Integrating verifiable sources directly into the reasoning process to ensure factual grounding</li>
             </ul>
+            
+            <p>This architecture significantly improves the reliability of LLMs, advancing them from "statistical generation" to "causal-reasoning-driven cognitive systems," providing both a theoretical foundation and practical solutions for hallucination mitigation. It supports the trusted deployment, accountability, and verifiability of large models in high-risk scenarios.</p>
+            
+            <p>Check out my project page to see how my work has driven results and innovation.</p>
           </div>
         </div>
         
         <!-- 项目内容区域 -->
         <div id="projects" class="content-section">
-          <h2 class="section-title">Projects</h2>
-          <p>Here you'll find my current and past AI research projects with a focus on hallucination-resistant architectures.</p>
-          <div class="project-highlight">
-            <h3>Hallucination-Resistant Architecture for LLMs</h3>
-            <p>Developing a three-tiered framework to mitigate hallucinations in large language models:</p>
-            <ul>
-              <li><strong>SFPL</strong> - Structured Feedback Planning Layer</li>
-              <li><strong>REFLEXION</strong> - Recursive self-feedback system</li>
-              <li><strong>CAT</strong> - Citation-Aware Transformer</li>
-            </ul>
+          <div class="card-grid">
+            <div class="project-card">
+              <div class="card-header">
+                <h3>Hallucination-Resistant Architecture</h3>
+              </div>
+              <div class="card-body">
+                <p>Developing a three-tiered framework to mitigate hallucinations in large language models:</p>
+                <ul>
+                  <li>SFPL - Structured Feedback Planning Layer</li>
+                  <li>REFLEXION - Recursive self-feedback</li>
+                  <li>CAT - Citation-Aware Transformer</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn">View Details</a>
+              </div>
+            </div>
+            
+            <div class="project-card">
+              <div class="card-header">
+                <h3>AI Reasoning Framework</h3>
+              </div>
+              <div class="card-body">
+                <p>A cognitive architecture that enables AI systems to reason, adapt, and connect ideas across complex contexts.</p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn">View Details</a>
+              </div>
+            </div>
+            
+            <div class="project-card">
+              <div class="card-header">
+                <h3>Financial AI Advisor</h3>
+              </div>
+              <div class="card-body">
+                <p>An AI system designed for high-stakes financial decision making with built-in hallucination detection.</p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn">View Details</a>
+              </div>
+            </div>
+            
+            <div class="project-card">
+              <div class="card-header">
+                <h3>Legal AI Assistant</h3>
+              </div>
+              <div class="card-body">
+                <p>AI-powered legal research assistant with citation verification and error correction capabilities.</p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn">View Details</a>
+              </div>
+            </div>
+            
+            <div class="project-card">
+              <div class="card-header">
+                <h3>Medical Diagnosis AI</h3>
+              </div>
+              <div class="card-body">
+                <p>Reliable AI system for medical diagnosis with explainable reasoning and source verification.</p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn">View Details</a>
+              </div>
+            </div>
+            
+            <div class="project-card">
+              <div class="card-header">
+                <h3>Educational AI Tutor</h3>
+              </div>
+              <div class="card-body">
+                <p>Adaptive learning system that provides accurate, verifiable explanations across STEM subjects.</p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn">View Details</a>
+              </div>
+            </div>
           </div>
         </div>
         
+        <!-- 工作论文区域 -->
         <div id="working-papers" class="content-section">
-          <h2 class="section-title">Working Papers</h2>
-          <p>My ongoing research papers and publications:</p>
-          <div class="paper">
-            <h3>Beyond Linear Generation: Adaptive Reasoning in LLMs</h3>
-            <p>Exploring methods to enable AI systems to reason, adapt, and connect ideas across complex contexts.</p>
-            <p><em>Status: In review at NeurIPS 2024</em></p>
+          <div class="card-grid">
+            <div class="paper-card">
+              <div class="card-header">
+                <h3>Beyond Linear Generation</h3>
+              </div>
+              <div class="card-body">
+                <p>Adaptive Reasoning in Large Language Models: Moving beyond statistical generation to causal-reasoning-driven cognitive systems.</p>
+                <p><em>Status: In review at NeurIPS 2024</em></p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn">Read Paper</a>
+              </div>
+            </div>
+            
+            <div class="paper-card">
+              <div class="card-header">
+                <h3>SFPL Architecture</h3>
+              </div>
+              <div class="card-body">
+                <p>Structured Feedback Planning Layer: A novel approach to pre-generation reasoning plans for LLMs.</p>
+                <p><em>Status: Submitted to JMLR</em></p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn">Read Paper</a>
+              </div>
+            </div>
+            
+            <div class="paper-card">
+              <div class="card-header">
+                <h3>CAT Transformer</h3>
+              </div>
+              <div class="card-body">
+                <p>Citation-Aware Transformer: Integrating verifiable sources directly into the reasoning process.</p>
+                <p><em>Status: Preprint available</em></p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn">Read Paper</a>
+              </div>
+            </div>
+            
+            <div class="paper-card">
+              <div class="card-header">
+                <h3>REFLEXION System</h3>
+              </div>
+              <div class="card-body">
+                <p>Recursive self-feedback and cognitive evaluation for dynamic error correction in LLMs.</p>
+                <p><em>Status: In preparation</em></p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn">Read Abstract</a>
+              </div>
+            </div>
           </div>
         </div>
         
+        <!-- Idea Lab区域 -->
         <div id="idea-lab" class="content-section">
-          <h2 class="section-title">Idea Lab</h2>
-          <p>A space for experimental concepts and forward-thinking AI research:</p>
           <blockquote>
             "In my darkest hour, AI lit the way—showing me how once-impossible ideas could take shape, 
             and revealing its greatest power: helping us make better decisions amid complexity and uncertainty."
           </blockquote>
-          <p>Current exploration: Cognitive architectures that enable AI to "think" rather than just generate.</p>
+          
+          <div class="idea-content">
+            <h3>Current Explorations</h3>
+            <ul>
+              <li><strong>Cognitive Architectures</strong>: Developing AI that can "think" rather than just generate</li>
+              <li><strong>Uncertainty Quantification</strong>: Methods for AI to express confidence in its outputs</li>
+              <li><strong>Cross-Domain Reasoning</strong>: Enabling AI to connect concepts across disparate fields</li>
+              <li><strong>Ethical AI Frameworks</strong>: Building accountability into AI systems</li>
+            </ul>
+            
+            <h3>Experimental Concepts</h3>
+            <div class="idea-grid">
+              <div class="idea-card">
+                <h4>Neural-Symbolic Integration</h4>
+                <p>Combining neural networks with symbolic reasoning for more reliable AI</p>
+              </div>
+              <div class="idea-card">
+                <h4>AI Self-Auditing</h4>
+                <p>Systems that can evaluate and explain their own decision processes</p>
+              </div>
+              <div class="idea-card">
+                <h4>Causal Reasoning Modules</h4>
+                <p>Enhancing LLMs with explicit causal inference capabilities</p>
+              </div>
+            </div>
+          </div>
         </div>
         
+        <!-- 内容区域 -->
         <div id="content" class="content-section">
-          <h2 class="section-title">Content</h2>
-          <p>Articles, presentations, and resources on AI research:</p>
           <div class="content-grid">
             <div class="content-card">
               <h3>The Future of Reliable AI</h3>
               <p>Keynote presentation at AI Reliability Summit 2024</p>
+              <a href="#" class="btn">View Presentation</a>
             </div>
             <div class="content-card">
-              <h3>Mitigating Hallucinations in High-Stakes Applications</h3>
+              <h3>Mitigating Hallucinations</h3>
               <p>Journal of AI Ethics, Vol. 8, Issue 3</p>
+              <a href="#" class="btn">Read Article</a>
+            </div>
+            <div class="content-card">
+              <h3>AI in High-Stakes Environments</h3>
+              <p>Workshop on Trustworthy AI Systems</p>
+              <a href="#" class="btn">View Workshop</a>
+            </div>
+            <div class="content-card">
+              <h3>From Generation to Reasoning</h3>
+              <p>Interview with AI Research Podcast</p>
+              <a href="#" class="btn">Listen Now</a>
             </div>
           </div>
         </div>
