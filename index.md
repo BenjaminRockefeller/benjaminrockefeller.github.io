@@ -29,10 +29,15 @@ Alongside product development, I am deeply committed to advancing research, tran
 
 Key Areas of Expertise
 Model Optimization & Fine-Tuning: LoRA, QLoRA, multi-task learning, continual training
+
 Knowledge Retrieval & Reasoning: RAG, tool-calling, context-aware QA, long-document reasoning
+
 Model Efficiency & Deployment: vLLM, LMDeploy, INT8 quantization, GPU/CPU hybrid scheduling
+
 System Evaluation & Reliability: Prompt stress tests, hallucination benchmarks, intent-grounded metrics
+
 Long-Term Memory & Multi-Agent Systems: Model Context Protocol (MCP) for long-range multi-agent memory
+
 
 Check out my project page to see how my work has driven results and innovation.
 
