@@ -2,8 +2,10 @@
 layout: page
 title: Idea Lab
 permalink: /idea-lab/
+nav: true
 ---
 
 # Idea Lab
 
-Exploratory ideas, prototypes, and speculative concepts for the next generation of intelligent systems.
+A personal sandbox of conceptual sketches, future research directions, and interdisciplinary thoughts on AI, cognition, and systems engineering.
+
