@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: page
 title: Content
+permalink: /content/
 ---
 
-## Content
+# Content
 
-展示你所创作的内容，或与内容相关的其他信息。
+Articles, notes, reflections, and insights across AI, cognition, and technical systems.
