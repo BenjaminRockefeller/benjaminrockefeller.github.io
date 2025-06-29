@@ -1,3 +1,9 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
+
 ### Technical Focus
 
 I specialize in seamlessly integrating language models into practical applications, addressing complex challenges while enabling businesses to achieve strategic goals. My approach blends technical execution with a deep understanding of the foundational principles driving these systems, ensuring a balance between innovation and real-world applicability.
