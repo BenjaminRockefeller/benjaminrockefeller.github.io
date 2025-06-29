@@ -18,13 +18,7 @@ CAT(Citation-Aware Generation): This facilitates word-level fact referencing, en
 
 This architecture significantly improves the reliability of LLMs, advancing them from "statistical generation" to "causal-reasoning-driven cognitive systems," providing both a theoretical foundation and practical solutions for hallucination mitigation. It supports the trusted deployment, accountability, and verifiability of large models in high-risk scenarios.
 
-
-
-
 Check out my project page to see how my work has driven results and innovation.
 
 
-
-{% include_relative _includes/publications.md %}
-{% include_relative _includes/services.md %}
 
