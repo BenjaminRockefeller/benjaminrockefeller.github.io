@@ -45,3 +45,29 @@ Check out my project page to see how my work has driven results and innovation.
 
 {% include_relative _includes/publications.md %}
 {% include_relative _includes/services.md %}
+
+<!-- 在 _layouts/default.html 或 index.md 中 -->
+<section id="about">
+  <h2>About Me</h2>
+  <!-- 你的关于我部分内容 -->
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <!-- 你的项目内容 -->
+</section>
+
+<section id="working-papers">
+  <h2>Working Papers</h2>
+  <!-- 你的工作论文内容 -->
+</section>
+
+<section id="idea-lab">
+  <h2>Idea Lab</h2>
+  <!-- 你的创意实验室内容 -->
+</section>
+
+<section id="content">
+  <h2>Content</h2>
+  <!-- 你的内容部分 -->
+</section>
