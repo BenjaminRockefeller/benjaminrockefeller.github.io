@@ -2,6 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
+nav: true
 ---
 
 ### Technical Focus
