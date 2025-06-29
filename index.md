@@ -27,15 +27,11 @@ I lead teams by facilitating collaboration across functions, ensuring that techn
 
 Alongside product development, I am deeply committed to advancing research, transforming practical challenges into fertile ground for academic inquiry. By bridging the gap between theory and application, I strive to push the boundaries of what’s possible, contributing to groundbreaking innovations that shape the future of the field.
 
-Key Areas of Expertise
+### Key Areas of Expertise
 Model Optimization & Fine-Tuning: LoRA, QLoRA, multi-task learning, continual training
-
 Knowledge Retrieval & Reasoning: RAG, tool-calling, context-aware QA, long-document reasoning
-
 Model Efficiency & Deployment: vLLM, LMDeploy, INT8 quantization, GPU/CPU hybrid scheduling
-
 System Evaluation & Reliability: Prompt stress tests, hallucination benchmarks, intent-grounded metrics
-
 Long-Term Memory & Multi-Agent Systems: Model Context Protocol (MCP) for long-range multi-agent memory
 
 
