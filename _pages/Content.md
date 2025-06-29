@@ -2,8 +2,9 @@
 layout: page
 title: Content
 permalink: /content/
+nav: true
 ---
 
 # Content
 
-Articles, notes, reflections, and insights across AI, cognition, and technical systems.
+Explore my published content, including tutorials, presentations, and AI learning resources.
