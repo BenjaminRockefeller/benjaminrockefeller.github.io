@@ -1,8 +1,10 @@
 ---
-layout: default
+layout: page
 title: Working Papers
+permalink: /working-papers/
 ---
 
-## Working Papers
+# Working Papers
 
-展示你的工作论文，文章或正在进行的研究。
+Drafts and in-progress research papers on LLM reliability, decision intelligence, and agent architectures.
+
