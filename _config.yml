@@ -38,3 +38,7 @@ header_pages:
   - working-papers.md
   - idea-lab.md
   - content.md
+collections:
+  pages:
+    output: true
+    permalink: /:name/
