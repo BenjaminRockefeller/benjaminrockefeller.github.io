@@ -9,7 +9,7 @@
   </head>
   <body>
 
-    <!-- 顶部导航栏 -->
+    <!-- 顶部导航栏，与首页一致 -->
     <nav class="main-nav">
       <a href="/" class="nav-link">About</a>
       <a href="/projects/" class="nav-link">Projects</a>
@@ -18,8 +18,10 @@
       <a href="/content/" class="nav-link">Content</a>
     </nav>
 
-    <!-- 页面主要内容 -->
-    {{ content }}
+    <!-- 页面主体内容，无左栏，居中排版 -->
+    <main class="main-content" style="padding: 2rem; max-width: 800px; margin: auto;">
+      {{ content }}
+    </main>
 
     {% if site.google_analytics %}
     <script>
