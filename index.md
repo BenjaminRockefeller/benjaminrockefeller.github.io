@@ -21,7 +21,6 @@ This architecture significantly improves the reliability of LLMs, advancing them
 
 
 
-Check out my project page to see how my work has driven results and innovation.
 
 
 
