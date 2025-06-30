@@ -2,8 +2,8 @@
 layout: page
 title: Content
 permalink: /content/
-nav: true
 ---
+
 
 # Content
 
