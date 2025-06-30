@@ -271,42 +271,52 @@
           background: #2a4a7c;
         }
       }
+      
+      /* 新增：子页样式 */
+      .subpage .wrapper header {
+        display: none;
+      }
+      
+      .subpage .wrapper section {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
     </style>
   </head>
 
   <body>
 
    <nav class="main-nav">
-  <div class="nav-container">
-    <div class="nav-item">
-      <a href="/about/" class="nav-link">
-        <i class="fas fa-user"></i>About
-      </a>
-    </div>
-    <div class="nav-item">
-      <a href="/projects/" class="nav-link">
-        <i class="fas fa-project-diagram"></i>Projects
-      </a>
-    </div>
-    <div class="nav-item">
-      <a href="/working-papers/" class="nav-link">
-        <i class="fas fa-file-alt"></i>Working Papers
-      </a>
-    </div>
-    <div class="nav-item">
-      <a href="/idea-lab/" class="nav-link">
-        <i class="fas fa-lightbulb"></i>Idea Lab
-      </a>
-    </div>
-    <div class="nav-item">
-      <a href="/content/" class="nav-link">
-        <i class="fas fa-book"></i>Content
-      </a>
-    </div>
-  </div>
-</nav>
+      <div class="nav-container">
+        <div class="nav-item active">
+          <a href="#" class="nav-link" data-target="about">
+            <i class="fas fa-user"></i>About
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link" data-target="projects">
+            <i class="fas fa-project-diagram"></i>Projects
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link" data-target="working-papers">
+            <i class="fas fa-file-alt"></i>Working Papers
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link" data-target="idea-lab">
+            <i class="fas fa-lightbulb"></i>Idea Lab
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link" data-target="content">
+            <i class="fas fa-book"></i>Content
+          </a>
+        </div>
+      </div>
+    </nav>
 
-    <div class="wrapper">
+    <div class="wrapper" id="main-wrapper">
       <header>
         {% if site.avatar %}
         <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" /></a>
@@ -597,7 +607,69 @@
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
     
     <!-- 新增导航功能脚本 -->
-   
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // 获取所有导航链接
+        const navLinks = document.querySelectorAll('.nav-link[data-target]');
+        const mainWrapper = document.getElementById('main-wrapper');
+        
+        // 点击事件
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 获取目标页面ID
+            const targetId = this.getAttribute('data-target');
+            
+            // 更新导航活动状态
+            document.querySelectorAll('.nav-item').forEach(item => {
+              item.classList.remove('active');
+            });
+            this.parentNode.classList.add('active');
+            
+            // 隐藏所有内容区域
+            document.querySelectorAll('.content-section').forEach(section => {
+              section.classList.remove('active');
+            });
+            
+            // 显示目标内容区域
+            document.getElementById(targetId).classList.add('active');
+            
+            // 根据目标页面决定是否显示左侧个人信息
+            if (targetId === 'about') {
+              mainWrapper.classList.remove('subpage');
+            } else {
+              mainWrapper.classList.add('subpage');
+            }
+          });
+        });
+        
+        // 初始化页面状态
+        const currentPage = window.location.hash.substring(1);
+        if (currentPage && currentPage !== 'about') {
+          // 如果URL中有hash参数且不是about页面
+          document.querySelectorAll('.content-section').forEach(section => {
+            section.classList.remove('active');
+          });
+          document.getElementById(currentPage).classList.add('active');
+          
+          // 更新导航状态
+          document.querySelectorAll('.nav-item').forEach(item => {
+            item.classList.remove('active');
+          });
+          const activeLink = document.querySelector(`.nav-link[data-target="${currentPage}"]`);
+          if (activeLink) {
+            activeLink.parentNode.classList.add('active');
+          }
+          
+          // 添加子页类
+          mainWrapper.classList.add('subpage');
+        } else {
+          // 默认显示about页面
+          mainWrapper.classList.remove('subpage');
+        }
+      });
+    </script>
     
     {% if site.google_analytics %}
     <script>
