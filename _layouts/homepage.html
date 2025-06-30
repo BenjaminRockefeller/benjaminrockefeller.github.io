@@ -276,36 +276,35 @@
 
   <body>
 
-    <!-- 全新设计的导航栏 -->
-    <nav class="main-nav">
-      <div class="nav-container">
-        <div class="nav-item active" data-target="about">
-          <a href="#about" class="nav-link">
-            <i class="fas fa-user"></i>About
-          </a>
-        </div>
-        <div class="nav-item" data-target="projects">
-          <a href="#projects" class="nav-link">
-            <i class="fas fa-project-diagram"></i>Projects
-          </a>
-        </div>
-        <div class="nav-item" data-target="working-papers">
-          <a href="#working-papers" class="nav-link">
-            <i class="fas fa-file-alt"></i>Working Papers
-          </a>
-        </div>
-        <div class="nav-item" data-target="idea-lab">
-          <a href="#idea-lab" class="nav-link">
-            <i class="fas fa-lightbulb"></i>Idea Lab
-          </a>
-        </div>
-        <div class="nav-item" data-target="content">
-          <a href="#content" class="nav-link">
-            <i class="fas fa-book"></i>Content
-          </a>
-        </div>
-      </div>
-    </nav>
+   <nav class="main-nav">
+  <div class="nav-container">
+    <div class="nav-item">
+      <a href="/about/" class="nav-link">
+        <i class="fas fa-user"></i>About
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/projects/" class="nav-link">
+        <i class="fas fa-project-diagram"></i>Projects
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/working-papers/" class="nav-link">
+        <i class="fas fa-file-alt"></i>Working Papers
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/idea-lab/" class="nav-link">
+        <i class="fas fa-lightbulb"></i>Idea Lab
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/content/" class="nav-link">
+        <i class="fas fa-book"></i>Content
+      </a>
+    </div>
+  </div>
+</nav>
 
     <div class="wrapper">
       <header>
@@ -599,52 +598,7 @@
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
     
     <!-- 新增导航功能脚本 -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // 导航项点击处理
-        const navItems = document.querySelectorAll('.nav-item');
-        const contentSections = document.querySelectorAll('.content-section');
-        
-        navItems.forEach(item => {
-          item.addEventListener('click', function() {
-            const target = this.getAttribute('data-target');
-            
-            // 更新活动导航项
-            navItems.forEach(nav => nav.classList.remove('active'));
-            this.classList.add('active');
-            
-            // 显示对应内容区域
-            contentSections.forEach(section => {
-              section.classList.remove('active');
-              if (section.id === target) {
-                section.classList.add('active');
-                
-                // 滚动到内容区域顶部
-                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            });
-            
-            // 更新URL哈希
-            window.location.hash = target;
-          });
-        });
-        
-        // 处理页面加载时的哈希
-        if (window.location.hash) {
-          const targetId = window.location.hash.substring(1);
-          const targetSection = document.getElementById(targetId);
-          const targetNavItem = document.querySelector(`.nav-item[data-target="${targetId}"]`);
-          
-          if (targetSection && targetNavItem) {
-            contentSections.forEach(section => section.classList.remove('active'));
-            targetSection.classList.add('active');
-            
-            navItems.forEach(nav => nav.classList.remove('active'));
-            targetNavItem.classList.add('active');
-          }
-        }
-      });
-    </script>
+   
     
     {% if site.google_analytics %}
     <script>
